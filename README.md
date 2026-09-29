@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Atharva Aqua Sales & Services — website
 
-## Getting Started
+SEO-first marketing site for an RO water purifier repair and service business in
+Pune / Pimpri-Chinchwad. Next.js 16 (App Router) + React 19 + Tailwind v4, statically
+prerendered.
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where the content lives
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Almost all copy is data, not JSX. Edit **`src/lib/site.ts`**:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Export | Drives |
+| --- | --- |
+| `site` | Business name, phone, email, address, hours, canonical URL |
+| `services` | Service cards, `/services/[slug]` pages, footer, schema offer catalog |
+| `products` | Product cards on `/` and `/products`, Product schema |
+| `areas` | `/ro-service/[city]` local pages, footer links, `areaServed` schema |
+| `whyUs`, `assurances`, `testimonials`, `faqs` | Home and service page sections |
 
-## Learn More
+Adding an area or a service automatically creates its page, its sitemap entry and
+its internal links — no other file needs touching.
 
-To learn more about Next.js, take a look at the following resources:
+## SEO
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Per-page `metadata` / `generateMetadata` with canonicals, OG and Twitter cards
+  (`src/app/layout.tsx` holds the defaults and `metadataBase`).
+- JSON-LD in `src/lib/schema.ts`, injected via `<JsonLd>`: `LocalBusiness`,
+  `WebSite`, `Service`, `FAQPage`, `BreadcrumbList`, `ItemList` of `Product`.
+- `src/app/sitemap.ts` and `src/app/robots.ts` generate `/sitemap.xml` and
+  `/robots.txt` from the same data.
+- Location landing pages at `/ro-service/<area>` target "RO service in <area>"
+  queries — the main organic lever for a local service business.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Before going live
 
-## Deploy on Vercel
+1. Set `NEXT_PUBLIC_SITE_URL` to the real domain (see `.env.example`). Canonicals,
+   sitemap and schema all derive from it.
+2. Fill in the real street address and lat/lng in `site.address` / `site.geo`, and
+   keep them byte-identical to the Google Business Profile listing.
+3. Replace `src/app/favicon.ico` and add a real logo image if one exists — the
+   header logo is currently inline SVG in `src/components/logo.tsx`.
+4. Verify the property in Google Search Console and submit `/sitemap.xml`.
+5. The enquiry form (`src/components/enquiry-form.tsx`) hands off to WhatsApp; wire
+   it to a server action or CRM endpoint when an inbox exists.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Images
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Product, hero and mascot PNGs from the design export live in `public/images/`.
+`public/images/icons/` holds the small icon PNGs from the same export — currently
+unused, since the UI draws icons as inline SVG (`src/components/icons.tsx`).
