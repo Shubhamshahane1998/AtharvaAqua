@@ -14,7 +14,7 @@ export function Hero({
   intro?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-[#dfe8f7]">
+    <section id="home" className="relative isolate overflow-hidden bg-[#dfe8f7]">
       <Image
         src={asset("/images/hero-technician.png")}
         alt="Atharva Aqua technician servicing a wall-mounted RO water purifier in a kitchen"
