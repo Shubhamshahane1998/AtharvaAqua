@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Hero } from "@/components/hero";
 import { FaqList, Testimonials, WhyUsGrid } from "@/components/sections";
-import { Breadcrumbs, CtaBand, Section, SectionHeading } from "@/components/ui";
+import { Breadcrumbs, Section, SectionHeading } from "@/components/ui";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { areas, faqs, services, site } from "@/lib/site";
@@ -108,7 +108,6 @@ export default async function AreaPage({ params }: Params) {
         </ul>
       </Section>
 
-      <CtaBand title={`Need an RO technician in ${area.name} today?`} />
     </>
   );
 }

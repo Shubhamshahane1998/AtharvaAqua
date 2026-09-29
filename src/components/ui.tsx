@@ -150,27 +150,6 @@ export function StickyActionBar() {
   );
 }
 
-export function CtaBand({
-  title = "Need your water purifier fixed today?",
-  subtitle = "Certified technicians across Pune & Pimpri-Chinchwad, with a 2-hour response time and genuine spare parts.",
-}: {
-  title?: string;
-  subtitle?: string;
-}) {
-  return (
-    <section className="bg-brand-700">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-14 text-center">
-        <h2 className="text-2xl font-extrabold text-white sm:text-3xl">{title}</h2>
-        <p className="max-w-2xl text-sm leading-relaxed text-brand-100">{subtitle}</p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <CallButton label={`Call ${site.phoneDisplay}`} variant="light" />
-          <WhatsAppButton />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function Breadcrumbs({ trail }: { trail: { href: string; label: string }[] }) {
   return (
     <nav aria-label="Breadcrumb" className="mx-auto max-w-6xl px-4 pt-6">

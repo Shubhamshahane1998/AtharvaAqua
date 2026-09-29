@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AboutDetail, Testimonials, WhyUsGrid } from "@/components/sections";
-import { Breadcrumbs, CtaBand } from "@/components/ui";
+import { Breadcrumbs } from "@/components/ui";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 
@@ -24,7 +24,6 @@ export default function AboutPage() {
       <AboutDetail />
       <WhyUsGrid />
       <Testimonials />
-      <CtaBand />
     </>
   );
 }

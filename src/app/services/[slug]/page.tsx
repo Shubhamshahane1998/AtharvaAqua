@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Breadcrumbs, CallButton, CtaBand, Section, TickList, WhatsAppButton } from "@/components/ui";
+import { Breadcrumbs, CallButton, Section, TickList, WhatsAppButton } from "@/components/ui";
 import { Testimonials, WhyUsGrid } from "@/components/sections";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
@@ -128,7 +128,6 @@ export default async function ServicePage({ params }: Params) {
 
       <WhyUsGrid />
       <Testimonials />
-      <CtaBand title={`Book ${service.title} today`} />
     </>
   );
 }

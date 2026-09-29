@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs, CtaBand, Section, SectionHeading } from "@/components/ui";
+import { Breadcrumbs, Section, SectionHeading } from "@/components/ui";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { areas } from "@/lib/site";
@@ -55,7 +55,6 @@ export default function ServiceAreasPage() {
           ))}
         </div>
       </Section>
-      <CtaBand />
     </>
   );
 }

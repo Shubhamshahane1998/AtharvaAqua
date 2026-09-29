@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ServicesGrid, FaqList } from "@/components/sections";
-import { Breadcrumbs, CtaBand, Section, SectionHeading } from "@/components/ui";
+import { Breadcrumbs, Section, SectionHeading } from "@/components/ui";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
@@ -31,7 +31,6 @@ export default function ServicesPage() {
       </Section>
       <ServicesGrid heading={false} />
       <FaqList />
-      <CtaBand />
     </>
   );
 }

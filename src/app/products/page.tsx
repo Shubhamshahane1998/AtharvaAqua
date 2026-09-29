@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ProductsGrid } from "@/components/sections";
-import { Breadcrumbs, CtaBand, Section, SectionHeading } from "@/components/ui";
+import { Breadcrumbs, Section, SectionHeading } from "@/components/ui";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, businessId } from "@/lib/schema";
 import { products, site } from "@/lib/site";
@@ -56,7 +56,6 @@ export default function ProductsPage() {
         />
       </Section>
       <ProductsGrid heading={false} />
-      <CtaBand title="Not sure which purifier fits your water?" subtitle="Share your TDS reading and family size — we'll recommend the right model, honestly." />
     </>
   );
 }
