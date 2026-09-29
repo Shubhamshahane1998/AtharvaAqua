@@ -58,10 +58,10 @@ function HelpChoosing() {
           <ul className="grid grid-cols-2 gap-6 sm:grid-cols-4">
             {helpPoints.map(({ label, Icon }) => (
               <li key={label} className="text-center">
-                <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-600">
-                  <Icon className="h-5 w-5" />
+                <span className="mx-auto inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-100 text-brand-500">
+                  <Icon className="h-6 w-6" />
                 </span>
-                <p className="mt-2.5 text-xs font-semibold leading-snug text-ink">{label}</p>
+                <p className="mt-2 text-sm font-normal leading-5 text-slate-800">{label}</p>
               </li>
             ))}
           </ul>

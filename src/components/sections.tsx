@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CheckIcon, whyIcons, serviceIcons, assuranceIcons } from "./icons";
+import { CheckIcon, assuranceIcons } from "./icons";
 import { ProductCarousel } from "./product-carousel";
 import { CallButton, Section, SectionHeading, TickList } from "./ui";
 import { asset,
@@ -25,7 +25,6 @@ export function ServicesGrid({ heading = true, limit }: { heading?: boolean; lim
         )}
         <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((s, i) => {
-            const Icon = serviceIcons[i % serviceIcons.length];
             return (
               <article
                 key={s.slug}
@@ -39,9 +38,14 @@ export function ServicesGrid({ heading = true, limit }: { heading?: boolean; lim
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover"
                   />
-                  <span className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white text-brand-600 shadow-md">
-                    <Icon className="h-5 w-5" />
-                  </span>
+                  <Image
+                    src={asset(`/images/icons/overlay-${i % 6}.png`)}
+                    alt=""
+                    aria-hidden="true"
+                    width={56}
+                    height={56}
+                    className="absolute right-3 top-3 h-14 w-14 rounded-2xl shadow-md"
+                  />
                 </div>
 
                 <div className="flex flex-1 flex-col items-center p-6 text-center">
@@ -78,18 +82,31 @@ export function ProductsGrid({ heading = true }: { heading?: boolean }) {
   );
 }
 
+const whyUsIcons = [
+  "/images/icons/group-5.png",
+  "/images/icons/group-11.png",
+  "/images/icons/group-9.png",
+  "/images/icons/group-10.png",
+  "/images/icons/group-8.png",
+  "/images/icons/group-7.png",
+];
+
 export function WhyUsGrid() {
   const left = whyUs.filter((_, i) => i % 2 === 0);
   const right = whyUs.filter((_, i) => i % 2 === 1);
 
   const Card = ({ item, index }: { item: (typeof whyUs)[number]; index: number }) => {
-    const Icon = whyIcons[index % whyIcons.length];
     return (
-      <div className="rounded-xl border-l-[3px] border-brand-500 bg-white p-5 shadow-[0_2px_12px_rgba(11,43,87,0.06)]">
-        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-brand-600">
-          <Icon className="h-5 w-5" />
-        </span>
-        <h3 className="mt-4 text-base font-bold leading-snug text-ink">{item.title}</h3>
+      <div className="rounded-xl border-l-[3px] border-brand-500 bg-white p-4 shadow-[0_2px_12px_rgba(11,43,87,0.06)]">
+        <Image
+          src={asset(whyUsIcons[index % whyUsIcons.length])}
+          alt=""
+          aria-hidden="true"
+          width={56}
+          height={56}
+          className="h-14 w-14"
+        />
+        <h3 className="mt-2.5 text-base font-bold leading-snug text-ink">{item.title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
       </div>
     );
@@ -138,15 +155,15 @@ export function WhyUsGrid() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-6 rounded-2xl bg-brand-50/80 px-6 py-7 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brand-200">
+      <div className="mt-12 grid gap-0 rounded-2xl bg-brand-50/80 px-4 py-5 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brand-300">
         {assurances.map((a, i) => {
           const Icon = assuranceIcons[i % assuranceIcons.length];
           return (
-            <div key={a.title} className="flex gap-3 lg:px-5 lg:first:pl-0 lg:last:pr-0">
-              <Icon className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
+            <div key={a.title} className="flex items-start gap-4 px-3 py-2 lg:px-5 lg:py-0 lg:first:pl-4 lg:last:pr-4">
+              <Icon className="mt-0.5 h-10 w-10 shrink-0 text-brand-600" />
               <div>
-                <h3 className="text-sm font-bold leading-snug text-ink">{a.title}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-muted">{a.body}</p>
+                <h3 className="text-base font-semibold leading-snug text-ink">{a.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted">{a.body}</p>
               </div>
             </div>
           );

@@ -88,7 +88,7 @@ export function ShieldIcon(props: IconProps) {
 export function ToolIcon(props: IconProps) {
   return (
     <svg {...base} {...props} aria-hidden="true">
-      <path d="M14.5 6.5a3.8 3.8 0 0 0 5 5l-8 8a2.8 2.8 0 0 1-4-4l8-8a3.8 3.8 0 0 0-1 -1Z" />
+      <path d="M21 5.5a6 6 0 0 1-7.8 7.8l-7.7 7.7a2.1 2.1 0 0 1-3-3l7.7-7.7A6 6 0 0 1 18 2.5l-4 4 3.5 3.5 3.5-4.5Z" />
     </svg>
   );
 }
@@ -171,6 +171,7 @@ export function MedalIcon(props: IconProps) {
   return (
     <svg {...base} {...props} aria-hidden="true">
       <circle cx="12" cy="9" r="5.5" />
+      <path d="m12 5.8 1 2 2.2.3-1.6 1.5.4 2.2-2-1-2 1 .4-2.2-1.6-1.5 2.2-.3 1-2Z" />
       <path d="m8.5 13.8-1.5 6.7 5-2.5 5 2.5-1.5-6.7" />
     </svg>
   );
@@ -188,21 +189,12 @@ export function ThumbUpIcon(props: IconProps) {
 export function LockIcon(props: IconProps) {
   return (
     <svg {...base} {...props} aria-hidden="true">
-      <rect x="4" y="10.5" width="16" height="10.5" rx="2" />
-      <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" />
+      <path d="M12 2.5 4.5 5.7v5.7c0 4.6 3.1 8.8 7.5 10.1 4.4-1.3 7.5-5.5 7.5-10.1V5.7L12 2.5Z" />
+      <rect x="8.5" y="10.5" width="7" height="6" rx="1" />
+      <path d="M10 10.5V8.7a2 2 0 0 1 4 0v1.8" />
     </svg>
   );
 }
-
-/** Badge icons over each service card photo, in `services` order. */
-export const serviceIcons = [
-  WrenchesIcon,
-  ScrewdriverIcon,
-  RefreshIcon,
-  ClipboardIcon,
-  ToolIcon,
-  FlaskIcon,
-];
 
 /** Icons for the assurance strip under "Why choose us". */
 export const assuranceIcons = [MedalIcon, DropletIcon, ThumbUpIcon, LockIcon];
