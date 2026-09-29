@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CallButton, WhatsAppButton } from "./ui";
-import { site } from "@/lib/site";
+import { asset, site } from "@/lib/site";
 
 export function Hero({
   title = "RO Water Purifier",
@@ -16,7 +16,7 @@ export function Hero({
   return (
     <section className="relative isolate overflow-hidden bg-[#dfe8f7]">
       <Image
-        src="/images/hero-technician.png"
+        src={asset("/images/hero-technician.png")}
         alt="Atharva Aqua technician servicing a wall-mounted RO water purifier in a kitchen"
         fill
         priority

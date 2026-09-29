@@ -10,6 +10,7 @@ import {
 } from "@/components/sections";
 import { Section, CallButton, WhatsAppButton } from "@/components/ui";
 import { HeadsetIcon, SettingsIcon, ShieldIcon, ToolIcon } from "@/components/icons";
+import { asset } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "RO Water Purifier Repair & Service in Pune | Atharva Aqua",
@@ -31,7 +32,7 @@ function HelpChoosing() {
       <div className="grid items-center gap-8 rounded-2xl bg-white px-6 py-8 shadow-[0_2px_18px_rgba(11,43,87,0.09)] lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:gap-10 lg:px-10">
         <div className="flex items-center gap-6 lg:min-w-0">
           <Image
-            src="/images/technician-mascot.png"
+            src={asset("/images/technician-mascot.png")}
             alt=""
             aria-hidden="true"
             width={150}

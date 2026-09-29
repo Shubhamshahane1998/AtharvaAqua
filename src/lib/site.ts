@@ -20,7 +20,29 @@ export const site = {
   hours: "Mo-Su 08:00-21:00",
 } as const;
 
+/**
+ * Prefixes a public-folder path with the deployment base path.
+ *
+ * `next/image` with `unoptimized: true` emits `src` verbatim instead of routing
+ * it through the optimizer, so basePath is never applied — every image would
+ * 404 on a project site served from a subdirectory.
+ */
+export const asset = (path: string) =>
+  `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 export const telLink = `tel:${site.phone}`;
+
+/**
+ * Joins a path onto the site URL.
+ *
+ * `new URL("/services", base)` discards the base's own path, which silently
+ * breaks every canonical, sitemap entry and schema id when the site is served
+ * from a subdirectory — as it is on a GitHub Pages project site.
+ */
+export const abs = (path: string) => {
+  const root = site.url.replace(/\/$/, "");
+  return path === "/" ? root : `${root}${path.startsWith("/") ? path : `/${path}`}`;
+};
 
 export const whatsappLink = (msg = "Hi, I need RO water purifier service.") =>
   `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(msg)}`;

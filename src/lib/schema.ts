@@ -1,6 +1,4 @@
-import { areas, faqs, services, site } from "./site";
-
-const abs = (path: string) => new URL(path, site.url).toString();
+import { abs, areas, faqs, services, site } from "./site";
 
 export const businessId = abs("/#business");
 

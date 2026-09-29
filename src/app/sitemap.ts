@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
-import { areas, services, site } from "@/lib/site";
+import { abs, areas, services } from "@/lib/site";
+
+// `output: export` requires metadata routes to be explicitly static.
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const abs = (path: string) => new URL(path, site.url).toString();
   const now = new Date();
 
   const staticRoutes: [string, number, MetadataRoute.Sitemap[number]["changeFrequency"]][] = [

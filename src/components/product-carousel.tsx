@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowIcon, CheckIcon } from "./icons";
-import { products, whatsappLink } from "@/lib/site";
+import { asset, products, whatsappLink } from "@/lib/site";
 
 const PAGE_SIZE = 4;
 const pageCount = Math.ceil(products.length / PAGE_SIZE);
@@ -48,7 +48,7 @@ export function ProductCarousel() {
                 >
                   <div className="relative aspect-4/5 overflow-hidden rounded-xl bg-slate-50">
                     <Image
-                      src={product.image}
+                      src={asset(product.image)}
                       alt={`${product.name} water purifier`}
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"

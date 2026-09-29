@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckIcon, whyIcons, serviceIcons, assuranceIcons } from "./icons";
 import { ProductCarousel } from "./product-carousel";
 import { CallButton, Section, SectionHeading, TickList } from "./ui";
-import {
+import { asset,
   assurances,
   faqs as defaultFaqs,
   services,
@@ -33,7 +33,7 @@ export function ServicesGrid({ heading = true, limit }: { heading?: boolean; lim
               >
                 <div className="relative aspect-[320/252]">
                   <Image
-                    src={s.image}
+                    src={asset(s.image)}
                     alt={`${s.title} by Atharva Aqua technicians`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -114,7 +114,7 @@ export function WhyUsGrid() {
         <div className="relative mx-auto aspect-square w-full max-w-[420px] lg:order-none">
           <div className="absolute left-1/2 top-[6%] h-[68%] w-[68%] -translate-x-1/2 rounded-full bg-brand-50" />
           <Image
-            src="/images/water-splash.png"
+            src={asset("/images/water-splash.png")}
             alt=""
             aria-hidden="true"
             fill
@@ -122,7 +122,7 @@ export function WhyUsGrid() {
             className="object-contain object-bottom"
           />
           <Image
-            src="/images/water-purifier.png"
+            src={asset("/images/water-purifier.png")}
             alt="KENT RO water purifier serviced by Atharva Aqua"
             fill
             sizes="420px"
@@ -176,7 +176,7 @@ export function Testimonials() {
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
                 <Image
-                  src={t.avatar}
+                  src={asset(t.avatar)}
                   alt=""
                   width={40}
                   height={40}
@@ -252,7 +252,7 @@ export function AboutBlock() {
                 className="relative aspect-3/4 overflow-hidden rounded-lg bg-white/5 ring-1 ring-white/10"
               >
                 <Image
-                  src={src}
+                  src={asset(src)}
                   alt=""
                   aria-hidden="true"
                   fill
@@ -310,7 +310,7 @@ export function AboutDetail() {
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-brand-50">
           <Image
-            src="/images/water-purifier.png"
+            src={asset("/images/water-purifier.png")}
             alt="RO water purifier serviced by Atharva Aqua"
             fill
             sizes="(min-width: 1024px) 40vw, 90vw"

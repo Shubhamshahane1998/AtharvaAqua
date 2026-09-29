@@ -3,7 +3,7 @@ import { ProductsGrid } from "@/components/sections";
 import { Breadcrumbs, Section, SectionHeading } from "@/components/ui";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, businessId } from "@/lib/schema";
-import { products, site } from "@/lib/site";
+import { abs, products } from "@/lib/site";
 
 const trail = [
   { href: "/", label: "Home" },
@@ -29,7 +29,7 @@ function productListSchema() {
         "@type": "Product",
         name: p.name,
         description: `${p.tagline}. ${p.features.join(". ")}.`,
-        image: new URL(p.image, site.url).toString(),
+        image: abs(p.image),
         brand: { "@type": "Brand", name: p.name },
         offers: {
           "@type": "Offer",
