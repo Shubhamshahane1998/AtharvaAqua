@@ -11,8 +11,9 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const nextConfig: NextConfig = {
   output: "export",
   basePath,
-  // GitHub Pages is plain static hosting: there is no image optimizer to call.
-  images: { unoptimized: true },
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
