@@ -306,7 +306,9 @@ export function AboutBlock() {
                 "Reliable Support for All Major Brands",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-white">
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-brand-300" />
+                  <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white">
+                    <CheckIcon className="h-2.5 w-2.5 text-brand-700" />
+                  </span>
                   {item}
                 </li>
               ))}
