@@ -57,7 +57,7 @@ export function SectionHeading({
  * stylesheet order, not string order, which silently produced white-on-white.
  */
 const buttonBase =
-  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold shadow-sm transition-colors";
+  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors";
 
 /**
  * Size is resolved here for the same reason as variant: a call-site override of
@@ -69,17 +69,17 @@ const buttonBase =
  */
 const buttonSizes = {
   sm: "gap-2 px-4 py-3 text-[13px] sm:px-6 sm:text-sm",
-  md: "gap-2.5 px-5 py-3 text-[15px] sm:text-base",
+  md: "gap-2.5 px-5 py-3 text-[15px] sm:text-base sm:font-semibold",
 } as const;
 
 const iconSize = { sm: "h-4 w-4", md: "h-[18px] w-[18px]" } as const;
 
 const callVariants = {
-  primary: "bg-brand-600 text-white hover:bg-brand-700",
-  light: "bg-white text-brand-600 hover:bg-brand-50",
+  primary: "bg-brand-600 text-white shadow-sm hover:bg-brand-700",
+  light: "bg-white text-brand-600 shadow-sm hover:bg-brand-50",
   outline:
-    "border border-brand-200 bg-white text-brand-600 shadow-none hover:border-brand-400 hover:bg-brand-50",
-  deep: "bg-brand-800 text-white hover:bg-brand-700",
+    "border border-brand-200 bg-white text-brand-600 hover:border-brand-400 hover:bg-brand-50",
+  deep: "bg-brand-800 text-white shadow-sm hover:bg-brand-700",
 } as const;
 
 export function CallButton({
@@ -105,9 +105,9 @@ export function CallButton({
 }
 
 const whatsappVariants = {
-  primary: "bg-whatsapp text-white hover:brightness-95",
+  primary: "bg-whatsapp text-white shadow-sm hover:brightness-95",
   outline:
-    "border border-whatsapp-deep bg-white text-whatsapp-deep shadow-none hover:bg-green-50",
+    "border border-slate-200 bg-white text-whatsapp-outline shadow-[0_2px_10px_rgba(11,43,87,0.10)] hover:border-whatsapp-outline hover:bg-green-50",
 } as const;
 
 export function WhatsAppButton({

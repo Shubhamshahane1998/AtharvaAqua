@@ -19,7 +19,8 @@
   --color-surface: #f0f9ff;
   --color-footer: #0038ad;
   --color-whatsapp: #00b159;
-  --color-whatsapp-deep: #0b8a33;
+  /* Figma token for the outlined WhatsApp button. */
+  --color-whatsapp-outline: #47c756;
   --color-mint: #28b14e;
   --color-sky: #2b6fff;
 
