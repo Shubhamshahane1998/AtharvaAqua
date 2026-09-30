@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const spark = "absolute block h-1 w-4 rounded-full bg-[#bfdbfe] sm:h-1.5 sm:w-5";
+
 const helpPoints = [
   { label: "Expert Guidance", Icon: HelpGearIcon },
   { label: "Professional Installation", Icon: HelpWrenchIcon },
@@ -37,14 +39,21 @@ function HelpChoosing() {
       <div className="grid items-center gap-8 rounded-2xl bg-white px-5 py-8 shadow-[0_2px_18px_rgba(11,43,87,0.09)] sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:gap-10 lg:px-10">
         {/* Mascot sits above the copy on a phone, beside it from `sm` up. */}
         <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:gap-6 sm:text-left lg:min-w-0">
-          <Image
-            src={asset("/images/technician-mascot.webp")}
-            alt=""
-            aria-hidden="true"
-            width={150}
-            height={150}
-            className="h-[120px] w-[120px] shrink-0 rounded-full bg-brand-50 object-contain sm:h-[150px] sm:w-[150px]"
-          />
+          {/* The mirrored dashes either side of the mascot are decorative. */}
+          <div className="relative shrink-0">
+            <Image
+              src={asset("/images/technician-mascot.webp")}
+              alt=""
+              aria-hidden="true"
+              width={150}
+              height={150}
+              className="h-[120px] w-[120px] rounded-full bg-brand-50 object-contain sm:h-[150px] sm:w-[150px]"
+            />
+            <span aria-hidden="true" className={`${spark} -left-6 top-[24%] -rotate-[42deg]`} />
+            <span aria-hidden="true" className={`${spark} -left-8 top-[46%]`} />
+            <span aria-hidden="true" className={`${spark} -right-6 top-[24%] rotate-[42deg]`} />
+            <span aria-hidden="true" className={`${spark} -right-8 top-[46%]`} />
+          </div>
           <div>
             <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-600">
               Need help choosing ?
