@@ -2,18 +2,18 @@ import { CallButton, WhatsAppButton } from "./ui";
 import { asset, site } from "@/lib/site";
 
 /**
- * One block of markup, two layouts.
+ * One block of markup, two layouts — in both, the photo is the background.
  *
- * Desktop keeps the Figma design: a landscape photo bleeding off the right
- * under a pale left-to-right wash, with the text in a left column.
+ * Desktop: a landscape frame bleeding off the right under a pale
+ * left-to-right wash, with the copy in a left column.
  *
- * On a phone the text spans the full width, so anything behind it destroys the
- * contrast. The mobile art is a portrait crop with the technician low in the
- * frame, and it sits *below* the copy in normal flow rather than behind it —
- * the tint continues into the photo's own background, so it reads as one panel.
+ * Mobile: a portrait frame whose upper third is empty tint by design. The
+ * copy sits over that empty area, so the panel is a single continuous image
+ * rather than a tinted block butted against a photo. Anchoring the image to
+ * the bottom keeps the technician in frame as the section grows.
  *
  * The <picture> swaps the file at the breakpoint, so a phone never downloads
- * the landscape version and vice versa.
+ * the landscape art and vice versa.
  */
 export function Hero({
   title = "RO Water Purifier",
@@ -27,8 +27,42 @@ export function Hero({
   intro?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-linear-to-b from-[#eaf3ff] to-[#cfe0f8] md:bg-[#dfe8f7] md:bg-none">
-      <div className="mx-auto max-w-6xl px-5 pb-2 pt-12 sm:px-6 md:py-24">
+    <section className="relative isolate min-h-[min(160vw,640px)] overflow-hidden bg-[#e7f0fd] md:min-h-0">
+      <picture>
+        <source
+          media="(min-width: 768px)"
+          srcSet={[
+            `${asset("/images/hero-technician-768.webp")} 768w`,
+            `${asset("/images/hero-technician-1280.webp")} 1280w`,
+            `${asset("/images/hero-technician-1920.webp")} 1920w`,
+          ].join(", ")}
+          sizes="100vw"
+        />
+        <source
+          srcSet={[
+            `${asset("/images/hero-mobile-640.webp")} 640w`,
+            `${asset("/images/hero-mobile-828.webp")} 828w`,
+          ].join(", ")}
+          sizes="100vw"
+        />
+        <img
+          src={asset("/images/hero-mobile-640.webp")}
+          width={828}
+          height={1242}
+          fetchPriority="high"
+          decoding="async"
+          alt="Atharva Aqua technician servicing a wall-mounted RO water purifier in a kitchen"
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-bottom md:object-[72%_center]"
+        />
+      </picture>
+
+      {/* Desktop only: the pale left-to-right wash from the design. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 hidden bg-linear-to-r from-[#dfe8f7] via-[#dfe8f7]/70 to-transparent md:block"
+      />
+
+      <div className="mx-auto max-w-6xl px-5 pt-10 sm:px-6 md:py-24">
         <div className="flex flex-col items-center text-center md:max-w-xl md:items-start md:text-left">
           <h1 className="text-[30px] font-extrabold uppercase leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
             <span className="block text-brand-800">{title}</span>{" "}
@@ -59,46 +93,6 @@ export function Hero({
           </div>
         </div>
       </div>
-
-      {/*
-        A plain <img> rather than next/image: with `images.unoptimized` the
-        optimizer never runs, so next/image emits a bare src with no srcset and
-        every phone would download the desktop file. This is the LCP element,
-        so it carries fetchPriority.
-      */}
-      <picture>
-        <source
-          media="(min-width: 768px)"
-          srcSet={[
-            `${asset("/images/hero-technician-768.webp")} 768w`,
-            `${asset("/images/hero-technician-1280.webp")} 1280w`,
-            `${asset("/images/hero-technician-1920.webp")} 1920w`,
-          ].join(", ")}
-          sizes="100vw"
-        />
-        <source
-          srcSet={[
-            `${asset("/images/hero-mobile-640.webp")} 640w`,
-            `${asset("/images/hero-mobile-828.webp")} 828w`,
-          ].join(", ")}
-          sizes="100vw"
-        />
-        <img
-          src={asset("/images/hero-mobile-640.webp")}
-          width={828}
-          height={822}
-          fetchPriority="high"
-          decoding="async"
-          alt="Atharva Aqua technician servicing a wall-mounted RO water purifier in a kitchen"
-          className="block h-auto w-full md:absolute md:inset-0 md:-z-10 md:h-full md:object-cover md:object-[72%_center]"
-        />
-      </picture>
-
-      {/* Desktop only: the pale left-to-right wash from the design. */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 hidden bg-linear-to-r from-[#dfe8f7] via-[#dfe8f7]/70 to-transparent md:block"
-      />
     </section>
   );
 }
