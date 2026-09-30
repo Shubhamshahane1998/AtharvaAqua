@@ -36,7 +36,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={telLink}
-            className="hidden items-center gap-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(37,99,235,0.25)] transition-transform hover:-translate-y-0.5 hover:bg-brand-700 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(37,99,235,0.25)] transition-transform hover:-translate-y-0.5 hover:bg-brand-700 sm:inline-flex"
           >
             <PhoneSolidIcon className="h-4 w-4" />
             Call Now
