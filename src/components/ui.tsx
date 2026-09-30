@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PhoneIcon, WhatsAppIcon, CheckIcon } from "./icons";
+import { PhoneIcon, WhatsAppIcon, WhatsAppOutlineIcon, CheckIcon } from "./icons";
 import { telLink, whatsappLink } from "@/lib/site";
 
 export function Section({
@@ -90,7 +90,7 @@ export function CallButton({
 const whatsappVariants = {
   primary: "bg-whatsapp text-white hover:brightness-95",
   outline:
-    "border border-whatsapp bg-white text-whatsapp shadow-none hover:bg-green-50",
+    "border border-whatsapp-deep bg-white text-whatsapp-deep shadow-none hover:bg-green-50",
 } as const;
 
 export function WhatsAppButton({
@@ -111,7 +111,11 @@ export function WhatsAppButton({
       rel="noopener noreferrer"
       className={`${buttonBase} ${whatsappVariants[variant]} ${className}`}
     >
-      <WhatsAppIcon className="h-4 w-4" />
+      {variant === "outline" ? (
+        <WhatsAppOutlineIcon className="h-[18px] w-[18px]" />
+      ) : (
+        <WhatsAppIcon className="h-4 w-4" />
+      )}
       {label}
     </a>
   );

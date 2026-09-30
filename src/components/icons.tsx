@@ -211,42 +211,67 @@ export function SettingsIcon(props: IconProps) {
 /* --- Solid glyphs for the "Need help choosing" tiles. Outline strokes read
    too faint at tile size; the design uses filled marks. --- */
 
-export function GearSolidIcon(props: IconProps) {
+/* --- "Need help choosing" tiles. All four are stroked outlines in the
+   design, at a slightly heavier weight than the body icons. --- */
+
+const help = { ...base, strokeWidth: 1.9 };
+
+export function HelpGearIcon(props: IconProps) {
   return (
-    <svg {...base} strokeWidth={1.7} {...props} aria-hidden="true">
-      <circle cx="12" cy="12" r="3.2" />
-      <path d="M19.5 14.1a1.5 1.5 0 0 0 .3 1.7l.1.1a1.9 1.9 0 1 1-2.7 2.7l-.1-.1a1.5 1.5 0 0 0-1.7-.3 1.5 1.5 0 0 0-.9 1.4v.2a1.9 1.9 0 1 1-3.8 0v-.1a1.5 1.5 0 0 0-1-1.4 1.5 1.5 0 0 0-1.7.3l-.1.1a1.9 1.9 0 1 1-2.7-2.7l.1-.1a1.5 1.5 0 0 0 .3-1.7 1.5 1.5 0 0 0-1.4-.9h-.2a1.9 1.9 0 1 1 0-3.8h.1a1.5 1.5 0 0 0 1.4-1 1.5 1.5 0 0 0-.3-1.7l-.1-.1a1.9 1.9 0 1 1 2.7-2.7l.1.1a1.5 1.5 0 0 0 1.7.3h.1a1.5 1.5 0 0 0 .9-1.4v-.2a1.9 1.9 0 1 1 3.8 0v.1a1.5 1.5 0 0 0 .9 1.4 1.5 1.5 0 0 0 1.7-.3l.1-.1a1.9 1.9 0 1 1 2.7 2.7l-.1.1a1.5 1.5 0 0 0-.3 1.7v.1a1.5 1.5 0 0 0 1.4.9h.2a1.9 1.9 0 1 1 0 3.8h-.1a1.5 1.5 0 0 0-1.4.9Z" />
+    <svg {...help} {...props} aria-hidden="true">
+      <circle cx="12" cy="12" r="3.1" />
+      <path d="M19.4 14.2a1.5 1.5 0 0 0 .3 1.7l.1.1a1.9 1.9 0 1 1-2.7 2.7l-.1-.1a1.5 1.5 0 0 0-1.7-.3 1.5 1.5 0 0 0-.9 1.4v.3a1.9 1.9 0 1 1-3.8 0v-.2a1.5 1.5 0 0 0-1-1.4 1.5 1.5 0 0 0-1.7.3l-.1.1a1.9 1.9 0 1 1-2.7-2.7l.1-.1a1.5 1.5 0 0 0 .3-1.7 1.5 1.5 0 0 0-1.4-.9h-.3a1.9 1.9 0 1 1 0-3.8h.2a1.5 1.5 0 0 0 1.4-1 1.5 1.5 0 0 0-.3-1.7l-.1-.1a1.9 1.9 0 1 1 2.7-2.7l.1.1a1.5 1.5 0 0 0 1.7.3h.1a1.5 1.5 0 0 0 .9-1.4v-.3a1.9 1.9 0 1 1 3.8 0v.2a1.5 1.5 0 0 0 .9 1.4 1.5 1.5 0 0 0 1.7-.3l.1-.1a1.9 1.9 0 1 1 2.7 2.7l-.1.1a1.5 1.5 0 0 0-.3 1.7v.1a1.5 1.5 0 0 0 1.4.9h.3a1.9 1.9 0 1 1 0 3.8h-.2a1.5 1.5 0 0 0-1.4.9Z" />
     </svg>
   );
 }
 
-export function WrenchSolidIcon(props: IconProps) {
+export function HelpWrenchIcon(props: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props} aria-hidden="true">
-      <path d="M21.3 6.4a.8.8 0 0 0-1.3-.4l-2.4 2.4-2-2 2.4-2.4a.8.8 0 0 0-.4-1.3 6 6 0 0 0-7.2 7.6L3.6 16.9a2.9 2.9 0 0 0 4.1 4.1l6.6-6.7a6 6 0 0 0 7-7.9ZM6.4 19.3a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Z" />
+    <svg {...help} {...props} aria-hidden="true">
+      <path d="M15.6 3.4a5 5 0 0 0-4.2 7.1L4.2 17.7a2.1 2.1 0 0 0 3 3l7.2-7.2a5 5 0 0 0 6.1-6.7l-2.8 2.8-2.6-2.6 2.8-2.8a5 5 0 0 0-2.3-.8Z" />
     </svg>
   );
 }
 
-export function ShieldSolidIcon(props: IconProps) {
+export function HelpShieldIcon(props: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props} aria-hidden="true">
+    <svg {...help} {...props} aria-hidden="true">
+      <path d="M12 2.6 4.9 5.6v5.5c0 4.4 3 8.5 7.1 9.7 4.1-1.2 7.1-5.3 7.1-9.7V5.6L12 2.6Z" />
+      <path d="m9.2 11.8 2 2 3.6-3.9" />
+    </svg>
+  );
+}
+
+export function HelpHeadsetIcon(props: IconProps) {
+  return (
+    <svg {...help} {...props} aria-hidden="true">
+      <path d="M4.2 13.4v-1.2a7.8 7.8 0 0 1 15.6 0v1.2" />
+      <rect x="2.4" y="12.9" width="4.1" height="6.5" rx="2" />
+      <rect x="17.5" y="12.9" width="4.1" height="6.5" rx="2" />
+      <path d="M19.5 19.4v.4a2.6 2.6 0 0 1-2.6 2.6h-2.1" />
+    </svg>
+  );
+}
+
+/** Outlined WhatsApp bubble, for the white/green-bordered button. */
+export function WhatsAppOutlineIcon(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.9}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+      aria-hidden="true"
+    >
+      <path d="M12 2.9a9.1 9.1 0 0 0-7.8 13.8L3 21l4.4-1.2A9.1 9.1 0 1 0 12 2.9Z" />
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12 1.8 3.8 5.3v6.1c0 5 3.4 9.6 8.2 10.9 4.8-1.3 8.2-5.9 8.2-10.9V5.3L12 1.8Zm4.2 7.6a1 1 0 0 0-1.5-1.3l-3.6 4-1.7-1.7a1 1 0 1 0-1.4 1.4l2.5 2.5a1 1 0 0 0 1.4 0l4.3-4.9Z"
+        fill="currentColor"
+        stroke="none"
+        d="M9.4 7.9c-.2-.5-.4-.5-.6-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.5 4 8.4 8.4 0 0 0 1.5.5 3.6 3.6 0 0 0 1.7.1 2.8 2.8 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3s-1.5-.7-1.7-.8-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.4v-.4c0-.1-.5-1.4-.7-1.9Z"
       />
-    </svg>
-  );
-}
-
-export function HeadsetSolidIcon(props: IconProps) {
-  return (
-    <svg {...base} strokeWidth={1.7} {...props} aria-hidden="true">
-      <path d="M4.2 13.5v-1.3a7.8 7.8 0 0 1 15.6 0v1.3" />
-      <rect x="2.4" y="13" width="4" height="6.4" rx="2" />
-      <rect x="17.6" y="13" width="4" height="6.4" rx="2" />
-      <path d="M19.6 19.4v.4a2.6 2.6 0 0 1-2.6 2.6h-2.2" />
     </svg>
   );
 }

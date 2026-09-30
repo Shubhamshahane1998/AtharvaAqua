@@ -10,10 +10,10 @@ import {
 } from "@/components/sections";
 import { Section, CallButton, WhatsAppButton } from "@/components/ui";
 import {
-  GearSolidIcon,
-  HeadsetSolidIcon,
-  ShieldSolidIcon,
-  WrenchSolidIcon,
+  HelpGearIcon,
+  HelpHeadsetIcon,
+  HelpShieldIcon,
+  HelpWrenchIcon,
 } from "@/components/icons";
 import { asset } from "@/lib/site";
 
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
 };
 
 const helpPoints = [
-  { label: "Expert Guidance", Icon: GearSolidIcon },
-  { label: "Professional Installation", Icon: WrenchSolidIcon },
-  { label: "Genuine Products", Icon: ShieldSolidIcon },
-  { label: "After-Sales Support", Icon: HeadsetSolidIcon },
+  { label: "Expert Guidance", Icon: HelpGearIcon },
+  { label: "Professional Installation", Icon: HelpWrenchIcon },
+  { label: "Genuine Products", Icon: HelpShieldIcon },
+  { label: "After-Sales Support", Icon: HelpHeadsetIcon },
 ];
 
 function HelpChoosing() {
