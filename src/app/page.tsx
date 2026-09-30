@@ -24,9 +24,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-// Fixed offsets rather than percentages: the pair reads as one mark, and the
-// horizontal sits ~20px below the diagonal and ~6px further out, as in the design.
-const spark = "absolute block h-[3px] rounded-full bg-[#bfdbfe] sm:h-1";
+/**
+ * Measured off the reference against a 112px circle, scaled to this one:
+ * diagonal at 45 degrees, 12px long, 13px clear of the circle, 37% down;
+ * horizontal 10px long, 18px clear, 51% down.
+ */
+const spark = "absolute block h-[3px] rounded-full bg-[#bfdbfe] sm:h-[4px]";
 
 const helpPoints = [
   { label: "Expert Guidance", Icon: HelpGearIcon },
@@ -51,10 +54,10 @@ function HelpChoosing() {
               height={150}
               className="h-[120px] w-[120px] rounded-full bg-brand-50 object-contain sm:h-[150px] sm:w-[150px]"
             />
-            <span aria-hidden="true" className={`${spark} -left-[26px] top-[34%] w-[14px] -rotate-[40deg] sm:-left-8 sm:w-[17px]`} />
-            <span aria-hidden="true" className={`${spark} -left-8 top-[48%] w-[13px] sm:-left-10 sm:w-4`} />
-            <span aria-hidden="true" className={`${spark} -right-[26px] top-[34%] w-[14px] rotate-[40deg] sm:-right-8 sm:w-[17px]`} />
-            <span aria-hidden="true" className={`${spark} -right-8 top-[48%] w-[13px] sm:-right-10 sm:w-4`} />
+            <span aria-hidden="true" className={`${spark} -left-[23px] top-[37%] w-[12px] -rotate-45 sm:-left-[29px] sm:w-[15px]`} />
+            <span aria-hidden="true" className={`${spark} -left-[28px] top-[51%] w-[10px] sm:-left-[35px] sm:w-[13px]`} />
+            <span aria-hidden="true" className={`${spark} -right-[23px] top-[37%] w-[12px] rotate-45 sm:-right-[29px] sm:w-[15px]`} />
+            <span aria-hidden="true" className={`${spark} -right-[28px] top-[51%] w-[10px] sm:-right-[35px] sm:w-[13px]`} />
           </div>
           <div>
             <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-600">

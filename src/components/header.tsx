@@ -18,7 +18,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-[1220px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-14 max-w-[1220px] items-center justify-between gap-4 px-4 sm:h-16 sm:px-6 lg:h-20 lg:px-8">
         <Logo />
 
         <nav aria-label="Main" className="hidden flex-1 items-center justify-center gap-8 lg:flex">

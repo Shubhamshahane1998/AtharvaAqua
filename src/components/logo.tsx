@@ -12,18 +12,18 @@ export function Logo({ light = false }: { light?: boolean }) {
         width={120}
         height={120}
         priority
-        className="h-10 w-10 shrink-0 object-contain"
+        className="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10"
       />
       <span className="leading-tight">
         <span
-          className={`block text-lg font-extrabold tracking-tight sm:text-xl ${
+          className={`block text-[15px] font-extrabold tracking-tight sm:text-base lg:text-xl ${
             light ? "text-white" : "text-ink"
           }`}
         >
           Atharva Aqua
         </span>
         <span
-          className={`block text-[9px] font-bold uppercase tracking-[0.16em] ${
+          className={`block text-[8px] font-bold uppercase tracking-[0.16em] sm:text-[9px] ${
             light ? "text-brand-100" : "text-mint"
           }`}
         >

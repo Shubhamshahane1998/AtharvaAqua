@@ -28,7 +28,20 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  /* Must track the sticky header height, or anchored sections land under it. */
+  scroll-padding-top: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  html {
+    scroll-padding-top: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
 }
 
 body {
