@@ -30,6 +30,14 @@ export const site = {
 export const asset = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
+/**
+ * Set on any deploy that is a preview rather than the canonical site.
+ *
+ * Publishing the same pages at two public URLs makes them compete with each
+ * other; the secondary copy is marked noindex so only one can rank.
+ */
+export const noIndex = process.env.NEXT_PUBLIC_NOINDEX === "true";
+
 export const telLink = `tel:${site.phone}`;
 
 /**

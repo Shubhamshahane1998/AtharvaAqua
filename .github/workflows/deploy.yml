@@ -19,10 +19,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      # Cloudflare builds `standalone`; Pages needs a static `out/` directory.
+      NEXT_OUTPUT: export
       # Project sites live at /<repo>, and canonicals, sitemap and JSON-LD are
       # all derived from these two values. Change both together for a custom domain.
       NEXT_PUBLIC_BASE_PATH: /AtharvaAqua
       NEXT_PUBLIC_SITE_URL: https://shubhamshahane1998.github.io/AtharvaAqua
+      # Cloudflare serves the copy that should rank. Two public copies of the
+      # same pages compete, so this one asks search engines to skip it.
+      NEXT_PUBLIC_NOINDEX: "true"
     steps:
       - uses: actions/checkout@v4
 

@@ -5,7 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
 import { localBusinessSchema, websiteSchema } from "@/lib/schema";
-import { site } from "@/lib/site";
+import { noIndex, site } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,9 +35,14 @@ export const metadata: Metadata = {
   publisher: site.name,
   alternates: { canonical: "/" },
   robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+    index: !noIndex,
+    follow: !noIndex,
+    googleBot: {
+      index: !noIndex,
+      follow: !noIndex,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
