@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { StickyActionBar } from "@/components/ui";
 import { JsonLd } from "@/components/json-ld";
 import { localBusinessSchema, websiteSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
@@ -78,7 +77,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <StickyActionBar />
       </body>
     </html>
   );

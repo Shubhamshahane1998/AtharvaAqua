@@ -50,9 +50,3 @@ body {
   display: none;
 }
 
-/* Bottom action bar on mobile must not cover page content. */
-@media (max-width: 767px) {
-  body {
-    padding-bottom: 4.5rem;
-  }
-}

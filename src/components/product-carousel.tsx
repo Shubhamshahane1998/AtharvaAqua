@@ -5,20 +5,41 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowIcon, CheckIcon } from "./icons";
 import { asset, products, whatsappLink } from "@/lib/site";
 
-const PAGE_SIZE = 4;
-const pageCount = Math.ceil(products.length / PAGE_SIZE);
+const DESKTOP_PAGE_SIZE = 4;
 
 export function ProductCarousel() {
   const trackRef = useRef<HTMLUListElement>(null);
   const [page, setPage] = useState(0);
+  /**
+   * Four per page stacks four cards vertically on a phone and buries the rest
+   * behind a horizontal swipe nobody looks for. One per page below `lg` gives
+   * the ordinary mobile carousel instead.
+   */
+  const [pageSize, setPageSize] = useState(DESKTOP_PAGE_SIZE);
+  const pageCount = Math.ceil(products.length / pageSize);
 
-  const goTo = useCallback((next: number) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const clamped = Math.max(0, Math.min(pageCount - 1, next));
-    track.scrollTo({ left: clamped * track.clientWidth, behavior: "smooth" });
-    setPage(clamped);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const apply = () => {
+      setPageSize(mq.matches ? DESKTOP_PAGE_SIZE : 1);
+      setPage(0);
+      trackRef.current?.scrollTo({ left: 0 });
+    };
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
   }, []);
+
+  const goTo = useCallback(
+    (next: number) => {
+      const track = trackRef.current;
+      if (!track) return;
+      const clamped = Math.max(0, Math.min(pageCount - 1, next));
+      track.scrollTo({ left: clamped * track.clientWidth, behavior: "smooth" });
+      setPage(clamped);
+    },
+    [pageCount],
+  );
 
   useEffect(() => {
     const track = trackRef.current;
@@ -41,7 +62,7 @@ export function ProductCarousel() {
         {Array.from({ length: pageCount }).map((_, p) => (
           <li key={p} className="snap-start">
             <ul className="grid gap-6 px-0.5 pb-2 sm:grid-cols-2 lg:grid-cols-4">
-              {products.slice(p * PAGE_SIZE, p * PAGE_SIZE + PAGE_SIZE).map((product) => (
+              {products.slice(p * pageSize, p * pageSize + pageSize).map((product) => (
                 <li
                   key={product.slug}
                   className="flex flex-col overflow-hidden rounded-2xl bg-white p-3 shadow-[0_2px_14px_rgba(11,43,87,0.08)]"
@@ -115,10 +136,14 @@ export function ProductCarousel() {
                 onClick={() => goTo(i)}
                 aria-label={`Go to product page ${i + 1}`}
                 aria-current={i === page}
-                className={`h-2 rounded-full transition-all ${
-                  i === page ? "w-6 bg-brand-600" : "w-2 bg-brand-200 hover:bg-brand-300"
-                }`}
-              />
+                className="group grid h-11 w-8 place-items-center"
+              >
+                <span
+                  className={`block h-2 rounded-full transition-all ${
+                    i === page ? "w-6 bg-brand-600" : "w-2 bg-brand-200 group-hover:bg-brand-300"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </>

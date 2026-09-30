@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PhoneIcon, WhatsAppIcon, CheckIcon } from "./icons";
-import { site, telLink, whatsappLink } from "@/lib/site";
+import { telLink, whatsappLink } from "@/lib/site";
 
 export function Section({
   children,
@@ -127,29 +127,6 @@ export function TickList({ items }: { items: readonly string[] }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-export function StickyActionBar() {
-  return (
-    <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-px border-t border-slate-200 bg-slate-200 md:hidden">
-      <a
-        href={telLink}
-        className="flex items-center justify-center gap-2 bg-brand-600 py-4 text-sm font-semibold text-white"
-      >
-        <PhoneIcon className="h-4 w-4" />
-        Call {site.phoneDisplay.replace("+91 ", "")}
-      </a>
-      <a
-        href={whatsappLink()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 bg-whatsapp py-4 text-sm font-semibold text-white"
-      >
-        <WhatsAppIcon className="h-4 w-4" />
-        WhatsApp
-      </a>
-    </div>
   );
 }
 
