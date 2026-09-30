@@ -29,10 +29,43 @@ export function localBusinessSchema() {
       longitude: site.geo.lng,
     },
     openingHours: site.hours,
+    // The structured form is what Google actually reads for hours.
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "08:00",
+        closes: "21:00",
+      },
+    ],
+    currenciesAccepted: "INR",
+    paymentAccepted: "Cash, UPI, Card, Bank Transfer",
+    // A service business without premises describes its radius, not a shopfront.
     areaServed: areas.map((a) => ({
       "@type": "City",
       name: a.name,
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: `${a.parent}, Maharashtra, India`,
+      },
     })),
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: site.geo.lat,
+        longitude: site.geo.lng,
+      },
+      geoRadius: "30000",
+    },
     knowsAbout: services.map((s) => s.title),
     hasOfferCatalog: {
       "@type": "OfferCatalog",

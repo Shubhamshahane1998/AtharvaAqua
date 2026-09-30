@@ -338,6 +338,7 @@ export function AboutDetail() {
         </div>
         <div>
           <SectionHeading
+            as="h1"
             center={false}
             eyebrow="About Atharva Aqua"
             title="Your Trusted Partner for Complete"

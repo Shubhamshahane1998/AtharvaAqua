@@ -25,6 +25,7 @@ export function SectionHeading({
   secondLine,
   subtitle,
   center = true,
+  as: Tag = "h2",
 }: {
   eyebrow?: string;
   title: string;
@@ -33,16 +34,18 @@ export function SectionHeading({
   secondLine?: string;
   subtitle?: string;
   center?: boolean;
+  /** Pages whose lead heading is a SectionHeading pass "h1"; a page with no h1 loses ranking signal. */
+  as?: "h1" | "h2";
 }) {
   return (
     <div className={`${center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}`}>
       {eyebrow && (
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">{eyebrow}</p>
       )}
-      <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-ink sm:text-[32px] sm:leading-[1.25]">
+      <Tag className="mt-2 text-2xl font-extrabold tracking-tight text-ink sm:text-[32px] sm:leading-[1.25]">
         {title} {accent && <span className="text-brand-500">{accent}</span>}
         {secondLine && <span className="block text-brand-500">{secondLine}</span>}
-      </h2>
+      </Tag>
       {subtitle && <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">{subtitle}</p>}
     </div>
   );

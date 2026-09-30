@@ -10,7 +10,7 @@ const trail = [
 ];
 
 export const metadata: Metadata = {
-  title: "RO Water Purifier Services in Pune — Repair, Installation & AMC",
+  title: "RO Water Purifier Services in Pune & Pimpri-Chinchwad",
   description:
     "All RO water purifier services in Pune & Pimpri-Chinchwad: repair, installation, filter replacement, AMC plans, UV & UF repair and water quality testing at your doorstep.",
   alternates: { canonical: "/services" },
@@ -23,6 +23,7 @@ export default function ServicesPage() {
       <Breadcrumbs trail={trail} />
       <Section className="pb-0">
         <SectionHeading
+          as="h1"
           eyebrow="Services"
           title="Complete RO Water Purifier"
           accent="Care"

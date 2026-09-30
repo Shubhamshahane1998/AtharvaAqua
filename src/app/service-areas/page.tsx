@@ -29,6 +29,7 @@ export default function ServiceAreasPage() {
       <Breadcrumbs trail={trail} />
       <Section>
         <SectionHeading
+          as="h1"
           eyebrow="Service Areas"
           title="Doorstep RO Service Across"
           accent="Pune & Pimpri-Chinchwad"

@@ -44,7 +44,7 @@ export function Hero({
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
         <div className="max-w-xl">
           <h1 className="text-[26px] font-extrabold uppercase leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl">
-            <span className="block text-brand-800">{title}</span>
+            <span className="block text-brand-800">{title}</span>{" "}
             <span className="block text-sky">{highlight}</span>
           </h1>
 

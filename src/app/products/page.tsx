@@ -49,6 +49,7 @@ export default function ProductsPage() {
       <Breadcrumbs trail={trail} />
       <Section className="pb-0">
         <SectionHeading
+          as="h1"
           eyebrow="Products"
           title="Water Purifiers for Your"
           accent="Home & Business"

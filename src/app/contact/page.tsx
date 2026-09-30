@@ -24,6 +24,7 @@ export default function ContactPage() {
       <Breadcrumbs trail={trail} />
       <Section>
         <SectionHeading
+          as="h1"
           eyebrow="Contact"
           title="Book a Technician or"
           accent="Ask a Question"

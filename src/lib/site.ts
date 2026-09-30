@@ -278,22 +278,8 @@ export const testimonials = [
   },
 ];
 
-export type Area = { slug: string; name: string; parent: string };
-
-export const areas: Area[] = [
-  { slug: "pune", name: "Pune", parent: "Pune" },
-  { slug: "pimpri-chinchwad", name: "Pimpri-Chinchwad", parent: "Pimpri-Chinchwad" },
-  { slug: "hinjewadi", name: "Hinjewadi", parent: "Pune" },
-  { slug: "wakad", name: "Wakad", parent: "Pimpri-Chinchwad" },
-  { slug: "baner", name: "Baner", parent: "Pune" },
-  { slug: "kothrud", name: "Kothrud", parent: "Pune" },
-  { slug: "hadapsar", name: "Hadapsar", parent: "Pune" },
-  { slug: "viman-nagar", name: "Viman Nagar", parent: "Pune" },
-  { slug: "kharadi", name: "Kharadi", parent: "Pune" },
-  { slug: "chinchwad", name: "Chinchwad", parent: "Pimpri-Chinchwad" },
-  { slug: "nigdi", name: "Nigdi", parent: "Pimpri-Chinchwad" },
-  { slug: "katraj", name: "Katraj", parent: "Pune" },
-];
+export type { Area } from "./areas";
+export { areas, areaBySlug } from "./areas";
 
 export const faqs = [
   {
