@@ -27,7 +27,8 @@ export function ServicesGrid({ heading = true, limit }: { heading?: boolean; lim
             return (
               <article
                 key={s.slug}
-                className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_14px_rgba(11,43,87,0.07)] transition-shadow hover:shadow-[0_6px_24px_rgba(11,43,87,0.12)]"
+                id={`service-${s.slug}`}
+                className="flex flex-col scroll-mt-24 overflow-hidden rounded-2xl bg-white shadow-[0_2px_14px_rgba(11,43,87,0.07)] transition-shadow hover:shadow-[0_6px_24px_rgba(11,43,87,0.12)]"
               >
                 <div className="relative aspect-[320/252]">
                   <Image
@@ -177,7 +178,10 @@ export function Testimonials() {
         <SectionHeading title="What Our" accent="Customers Say" />
         <div className="mt-12 grid gap-7 lg:grid-cols-3">
           {testimonials.map((t) => (
-            <figure key={t.name} className="rounded-2xl bg-white p-6 shadow-[0_2px_14px_rgba(11,43,87,0.07)]">
+            <figure
+              key={t.name}
+              className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-[0_2px_14px_rgba(11,43,87,0.07)]"
+            >
               <div className="flex gap-1 text-brand-500" aria-label="Rated 5 out of 5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <svg key={i} viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor" aria-hidden="true">
@@ -188,7 +192,7 @@ export function Testimonials() {
               <blockquote className="mt-4 text-sm leading-relaxed text-muted">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
-              <figcaption className="mt-6 flex items-center gap-3">
+              <figcaption className="mt-auto flex items-center gap-3 pt-6">
                 <Image
                   src={asset(t.avatar)}
                   alt=""
@@ -294,7 +298,7 @@ export function AboutBlock() {
               quality workmanship, transparent pricing, and complete customer satisfaction.
             </p>
 
-            <ul className="mt-6 space-y-2.5">
+            <ul className="mx-auto mt-6 w-fit space-y-2.5 text-left lg:mx-0">
               {[
                 "Certified & Skilled RO Technicians",
                 "Genuine Spare Parts & Filters",
@@ -302,7 +306,10 @@ export function AboutBlock() {
                 "Affordable AMC & Maintenance Plans",
                 "Reliable Support for All Major Brands",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm text-white">
+                <li
+                  key={item}
+                  className="flex items-start gap-2.5 text-sm text-white"
+                >
                   <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white">
                     <CheckIcon className="h-2.5 w-2.5 text-brand-700" />
                   </span>

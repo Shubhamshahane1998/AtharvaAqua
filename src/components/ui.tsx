@@ -107,7 +107,9 @@ export function CallButton({
 const whatsappVariants = {
   primary: "bg-whatsapp text-white shadow-sm hover:brightness-95",
   outline:
-    "border border-slate-300 bg-white text-whatsapp-outline shadow-[0_2px_10px_rgba(11,43,87,0.10)] hover:border-whatsapp-outline hover:bg-green-50",
+    // Green outline on a phone, matching the label; the desktop design uses a
+    // neutral border instead.
+    "border border-whatsapp-outline bg-white text-whatsapp-outline shadow-[0_2px_10px_rgba(11,43,87,0.10)] hover:bg-green-50 sm:border-slate-300 sm:hover:border-whatsapp-outline",
 } as const;
 
 export function WhatsAppButton({

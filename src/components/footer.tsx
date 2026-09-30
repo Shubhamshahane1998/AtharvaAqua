@@ -31,10 +31,9 @@ export function Footer() {
     <footer className="mt-0 bg-footer text-blue-100">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo light />
+          <Logo light minimal />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-blue-100/85">
-            Delivering fresh, pure, and mineral-balanced water right to your doorstep — ensuring
-            your family&apos;s health every day.
+            Delivering fresh, pure, and mineral-balanced water right to your doorstep ensuring your family&apos;s health every day.
           </p>
           <ul className="mt-6 flex gap-3">
             {socials.map((s) => (
@@ -71,10 +70,10 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm text-blue-100/85">
             {services.map((s) => (
               <li key={s.slug}>
-                {/* Plain anchor on purpose: next/link intercepts a same-page hash
-                    and skips the scroll, so the section never comes into view. */}
-                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                <a href="/#services" className="hover:text-white">
+                {/* Lands on that service's own card, not the top of the section.
+                    Plain anchor on purpose: next/link intercepts a same-page hash
+                    and skips the scroll entirely. */}
+                <a href={`/#service-${s.slug}`} className="hover:text-white">
                   {s.title}
                 </a>
               </li>

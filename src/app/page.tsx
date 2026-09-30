@@ -30,7 +30,7 @@ export const metadata: Metadata = {
  * horizontal 10px long, 18px clear, 51% down.
  */
 // Mobile-only flourish: the desktop design has no dashes around the mascot.
-const spark = "absolute block h-[3px] rounded-full bg-[#bfdbfe] sm:hidden";
+const spark = "absolute  h-[4px] rounded-full bg-[#bfdbfe] sm:hidden";
 
 const helpPoints = [
   { label: "Expert Guidance", Icon: HelpGearIcon },
@@ -56,9 +56,9 @@ function HelpChoosing() {
               className="h-[120px] w-[120px] rounded-full bg-brand-50 object-contain sm:h-[150px] sm:w-[150px]"
             />
             <span aria-hidden="true" className={`${spark} -left-[23px] top-[30%] w-[15px] -rotate-130`} />
-            <span aria-hidden="true" className={`${spark} -left-[28px] top-[51%] w-[10px]` } />
+            <span aria-hidden="true" className={`${spark} -left-[28px] top-[51%] w-[15px] ` } />
             <span aria-hidden="true" className={`${spark} -right-[23px] top-[30%] w-[15px] rotate-130`} />
-            <span aria-hidden="true" className={`${spark} -right-[28px] top-[51%] w-[10px]`} />
+            <span aria-hidden="true" className={`${spark} -right-[28px] top-[51%] w-[15px]`} />
           </div>
           <div>
             <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-600">
