@@ -39,7 +39,7 @@ export function ServicesGrid({ heading = true, limit }: { heading?: boolean; lim
                     className="object-cover"
                   />
                   <Image
-                    src={asset(`/images/icons/overlay-${i % 6}.png`)}
+                    src={asset(`/images/icons/overlay-${i % 6}.webp`)}
                     alt=""
                     aria-hidden="true"
                     width={56}
@@ -83,12 +83,12 @@ export function ProductsGrid({ heading = true }: { heading?: boolean }) {
 }
 
 const whyUsIcons = [
-  "/images/icons/group-5.png",
-  "/images/icons/group-11.png",
-  "/images/icons/group-9.png",
-  "/images/icons/group-10.png",
-  "/images/icons/group-8.png",
-  "/images/icons/group-7.png",
+  "/images/icons/group-5.webp",
+  "/images/icons/group-11.webp",
+  "/images/icons/group-9.webp",
+  "/images/icons/group-10.webp",
+  "/images/icons/group-8.webp",
+  "/images/icons/group-7.webp",
 ];
 
 export function WhyUsGrid() {
@@ -131,7 +131,7 @@ export function WhyUsGrid() {
         <div className="relative mx-auto aspect-square w-full max-w-[420px] lg:order-none">
           <div className="absolute left-1/2 top-[6%] h-[68%] w-[68%] -translate-x-1/2 rounded-full bg-brand-50" />
           <Image
-            src={asset("/images/water-splash.png")}
+            src={asset("/images/water-splash.webp")}
             alt=""
             aria-hidden="true"
             fill
@@ -139,7 +139,7 @@ export function WhyUsGrid() {
             className="object-contain object-bottom"
           />
           <Image
-            src={asset("/images/water-purifier.png")}
+            src={asset("/images/water-purifier.webp")}
             alt="KENT RO water purifier serviced by Atharva Aqua"
             fill
             sizes="420px"
@@ -245,12 +245,12 @@ export function FaqList({ items = defaultFaqs }: { items?: { q: string; a: strin
 }
 
 const aboutCollage = [
-  "/images/products/lx-one-titanium.png",
-  "/images/products/aqua-supreme.png",
-  "/images/products/purasis-puroaqua.png",
-  "/images/products/aqua-era.png",
-  "/images/products/aqua-innovative.png",
-  "/images/products/lexpure-ivory.png",
+  "/images/products/lx-one-titanium.webp",
+  "/images/products/aqua-supreme.webp",
+  "/images/products/purasis-puroaqua.webp",
+  "/images/products/aqua-era.webp",
+  "/images/products/aqua-innovative.webp",
+  "/images/products/lexpure-ivory.webp",
 ];
 
 export function AboutBlock() {
@@ -329,7 +329,7 @@ export function AboutDetail() {
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-brand-50">
           <Image
-            src={asset("/images/water-purifier.png")}
+            src={asset("/images/water-purifier.webp")}
             alt="RO water purifier serviced by Atharva Aqua"
             fill
             sizes="(min-width: 1024px) 40vw, 90vw"

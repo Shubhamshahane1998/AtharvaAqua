@@ -59,7 +59,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "ro-repair-service",
-    image: "/images/services/ro-repair-service.png",
+    image: "/images/services/ro-repair-service.webp",
     title: "RO Repair Service",
     short:
       "Fast diagnosis and repair for RO systems with low water flow, leakage, unusual noise, and poor purification performance.",
@@ -73,7 +73,7 @@ export const services: Service[] = [
   },
   {
     slug: "ro-installation",
-    image: "/images/services/ro-installation.png",
+    image: "/images/services/ro-installation.webp",
     title: "RO Installation",
     short:
       "Professional installation of all major RO, UV, and UF water purifiers with complete testing and setup.",
@@ -87,7 +87,7 @@ export const services: Service[] = [
   },
   {
     slug: "filter-replacement",
-    image: "/images/services/filter-replacement.png",
+    image: "/images/services/filter-replacement.webp",
     title: "Filter Replacement",
     short:
       "Replace old filters and membranes with genuine parts to ensure clean, safe, and great-tasting drinking water.",
@@ -101,7 +101,7 @@ export const services: Service[] = [
   },
   {
     slug: "amc-maintenance-plan",
-    image: "/images/services/amc-maintenance-plan.png",
+    image: "/images/services/amc-maintenance-plan.webp",
     title: "AMC Maintenance Plan",
     short:
       "Annual maintenance plans with scheduled servicing, preventive checkups, and priority technician support.",
@@ -115,7 +115,7 @@ export const services: Service[] = [
   },
   {
     slug: "uv-uf-repair",
-    image: "/images/services/uv-uf-repair.png",
+    image: "/images/services/uv-uf-repair.webp",
     title: "UV & UF Repair",
     short:
       "Reliable repair and servicing for UV and UF water purifiers to maintain safe and hygienic drinking water.",
@@ -129,7 +129,7 @@ export const services: Service[] = [
   },
   {
     slug: "water-quality-testing",
-    image: "/images/services/water-quality-testing.png",
+    image: "/images/services/water-quality-testing.webp",
     title: "Water Quality Testing",
     short:
       "Professional water quality testing to check TDS, purity, and recommend the right filtration solution.",
@@ -156,7 +156,7 @@ export const products: Product[] = [
     slug: "aqua-era",
     name: "Aqua ERA",
     tagline: "Pure. Premium. Powerful.",
-    image: "/images/products/aqua-era.png",
+    image: "/images/products/aqua-era.webp",
     features: [
       "Advanced multi-stage purification",
       "Large storage tank",
@@ -167,7 +167,7 @@ export const products: Product[] = [
     slug: "aqua-innovative",
     name: "Aqua Innovative",
     tagline: "Reliable & Efficient",
-    image: "/images/products/aqua-innovative.png",
+    image: "/images/products/aqua-innovative.webp",
     features: [
       "RO + UV + UF purification",
       "Suitable for home use",
@@ -178,7 +178,7 @@ export const products: Product[] = [
     slug: "lexpure-ivory",
     name: "Lexpure Ivory",
     tagline: "Clean Water, Healthy Life",
-    image: "/images/products/lexpure-ivory.png",
+    image: "/images/products/lexpure-ivory.webp",
     features: [
       "Advanced filtration system",
       "Compact and elegant design",
@@ -189,7 +189,7 @@ export const products: Product[] = [
     slug: "purasis-puroaqua",
     name: "Purasis Puroaqua",
     tagline: "Premium Purification",
-    image: "/images/products/purasis-puroaqua.png",
+    image: "/images/products/purasis-puroaqua.webp",
     features: [
       "Multi-stage purification",
       "Modern and durable design",
@@ -200,7 +200,7 @@ export const products: Product[] = [
     slug: "aqua-supreme",
     name: "Aqua Supreme",
     tagline: "Advanced & Stylish",
-    image: "/images/products/aqua-supreme.png",
+    image: "/images/products/aqua-supreme.webp",
     features: [
       "Titanium series technology",
       "Excellent purification capacity",
@@ -211,7 +211,7 @@ export const products: Product[] = [
     slug: "lx-one-titanium",
     name: "LX One Titanium",
     tagline: "Premium & Stylish",
-    image: "/images/products/lx-one-titanium.png",
+    image: "/images/products/lx-one-titanium.webp",
     features: [
       "13L storage capacity",
       "Titanium series design",
@@ -259,21 +259,21 @@ export const testimonials = [
     quote:
       "Excellent service! The technician arrived within an hour of my call and fixed the leakage issue perfectly. Very professional.",
     name: "Rahul Sharma",
-    avatar: "/images/avatars/avatar-1.png",
+    avatar: "/images/avatars/avatar-1.webp",
     role: "Pune Resident",
   },
   {
     quote:
       "Atharva Aqua handled our office water purifier installation. The TDS calibration was done precisely. Highly recommended for AMC.",
     name: "Priya Deshmukh",
-    avatar: "/images/avatars/avatar-2.png",
+    avatar: "/images/avatars/avatar-2.webp",
     role: "Business Owner",
   },
   {
     quote:
       "Been using their AMC plan for 2 years. Never had to worry about filter changes. They call us before service is due. Hassle-free!",
     name: "Amit Patel",
-    avatar: "/images/avatars/avatar-3.png",
+    avatar: "/images/avatars/avatar-3.webp",
     role: "Homeowner",
   },
 ];

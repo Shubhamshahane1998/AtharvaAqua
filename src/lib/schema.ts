@@ -13,7 +13,7 @@ export function localBusinessSchema() {
     description: site.description,
     telephone: site.phone,
     email: site.email,
-    image: abs("/images/hero-technician.png"),
+    image: abs("/images/og-cover.jpg"),
     priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",

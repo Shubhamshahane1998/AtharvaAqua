@@ -47,13 +47,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.shortName} | RO Water Purifier Repair & Service in Pune`,
     description: site.description,
-    images: [{ url: "/images/hero-technician.png", width: 1296, height: 709, alt: site.name }],
+    images: [{ url: "/images/og-cover.jpg", width: 1200, height: 630, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.shortName} | RO Water Purifier Repair & Service`,
     description: site.description,
-    images: ["/images/hero-technician.png"],
+    images: ["/images/og-cover.jpg"],
   },
   category: "Home Services",
 };

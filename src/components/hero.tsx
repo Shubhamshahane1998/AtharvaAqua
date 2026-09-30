@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CallButton, WhatsAppButton } from "./ui";
 import { asset, site } from "@/lib/site";
 
@@ -15,17 +14,31 @@ export function Hero({
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-[#dfe8f7]">
-      <Image
-        src={asset("/images/hero-technician.png")}
-        alt="Atharva Aqua technician servicing a wall-mounted RO water purifier in a kitchen"
-        fill
-        priority
+      {/*
+        A plain <img> rather than next/image: with `images.unoptimized` the
+        optimizer never runs, so next/image emits a bare src with no srcset and
+        every phone downloads the desktop file. This is the LCP element, so it
+        picks its own width and carries fetchPriority.
+      */}
+      {/* eslint-disable-next-line @next/next/no-img-element -- see note above */}
+      <img
+        src={asset("/images/hero-technician-1280.webp")}
+        srcSet={[
+          `${asset("/images/hero-technician-768.webp")} 768w`,
+          `${asset("/images/hero-technician-1280.webp")} 1280w`,
+          `${asset("/images/hero-technician-1920.webp")} 1920w`,
+        ].join(", ")}
         sizes="100vw"
-        className="-z-10 object-cover object-[72%_center]"
+        width={1920}
+        height={1049}
+        fetchPriority="high"
+        decoding="async"
+        alt="Atharva Aqua technician servicing a wall-mounted RO water purifier in a kitchen"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-[72%_center]"
       />
       <div
         aria-hidden="true"
-        className=" inset-0 -z-10 bg-linear-to-r from-[#dfe8f7] via-[#dfe8f7]/95 to-[#dfe8f7]/70 md:via-[#dfe8f7]/70 md:to-transparent"
+        className="absolute inset-0 -z-10 bg-linear-to-r from-[#dfe8f7] via-[#dfe8f7]/95 to-[#dfe8f7]/70 md:via-[#dfe8f7]/70 md:to-transparent"
       />
 
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
