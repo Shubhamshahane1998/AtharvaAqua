@@ -9,7 +9,12 @@ import {
   WhyUsGrid,
 } from "@/components/sections";
 import { Section, CallButton, WhatsAppButton } from "@/components/ui";
-import { HeadsetIcon, SettingsIcon, ShieldIcon, ToolIcon } from "@/components/icons";
+import {
+  GearSolidIcon,
+  HeadsetSolidIcon,
+  ShieldSolidIcon,
+  WrenchSolidIcon,
+} from "@/components/icons";
 import { asset } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -20,24 +25,25 @@ export const metadata: Metadata = {
 };
 
 const helpPoints = [
-  { label: "Expert Guidance", Icon: SettingsIcon },
-  { label: "Professional Installation", Icon: ToolIcon },
-  { label: "Genuine Products", Icon: ShieldIcon },
-  { label: "After-Sales Support", Icon: HeadsetIcon },
+  { label: "Expert Guidance", Icon: GearSolidIcon },
+  { label: "Professional Installation", Icon: WrenchSolidIcon },
+  { label: "Genuine Products", Icon: ShieldSolidIcon },
+  { label: "After-Sales Support", Icon: HeadsetSolidIcon },
 ];
 
 function HelpChoosing() {
   return (
     <Section className="pt-0">
-      <div className="grid items-center gap-8 rounded-2xl bg-white px-6 py-8 shadow-[0_2px_18px_rgba(11,43,87,0.09)] lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:gap-10 lg:px-10">
-        <div className="flex items-center gap-6 lg:min-w-0">
+      <div className="grid items-center gap-8 rounded-2xl bg-white px-5 py-8 shadow-[0_2px_18px_rgba(11,43,87,0.09)] sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:gap-10 lg:px-10">
+        {/* Mascot sits above the copy on a phone, beside it from `sm` up. */}
+        <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:gap-6 sm:text-left lg:min-w-0">
           <Image
             src={asset("/images/technician-mascot.webp")}
             alt=""
             aria-hidden="true"
             width={150}
             height={150}
-            className="hidden h-[150px] w-[150px] shrink-0 rounded-full bg-brand-50 object-contain sm:block"
+            className="h-[120px] w-[120px] shrink-0 rounded-full bg-brand-50 object-contain sm:h-[150px] sm:w-[150px]"
           />
           <div>
             <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-600">
@@ -45,7 +51,7 @@ function HelpChoosing() {
             </span>
             <h2 className="mt-3 text-xl font-extrabold leading-snug text-ink sm:text-2xl">
               Not Sure Which Purifier
-              <span className="block">is Right for You?</span>
+              <span className="block text-brand-600 sm:text-ink">is Right for You?</span>
             </h2>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
               Tell us about your water quality, family size, and requirements. Our experts will help
@@ -55,21 +61,26 @@ function HelpChoosing() {
         </div>
 
         <div className="lg:border-l lg:border-slate-200 lg:pl-10">
-          <ul className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+          {/* Bordered 2x2 tiles on a phone; plain centred column from `sm` up. */}
+          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-6">
             {helpPoints.map(({ label, Icon }) => (
-              <li key={label} className="text-center">
-                <span className="mx-auto inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-100 text-brand-500">
+              <li
+                key={label}
+                className="flex items-center gap-3 rounded-xl border border-slate-200 p-3 text-left sm:block sm:border-0 sm:p-0 sm:text-center"
+              >
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-500 sm:mx-auto sm:rounded-full">
                   <Icon className="h-6 w-6" />
                 </span>
-                <p className="mt-2 text-sm font-normal leading-5 text-slate-800">{label}</p>
+                <p className="text-sm font-normal leading-5 text-slate-800 sm:mt-2">{label}</p>
               </li>
             ))}
           </ul>
-          <div className="mt-7 flex flex-wrap justify-center gap-4">
-            <CallButton label="Talk to an Expert" />
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
+            <CallButton label="Talk to an Expert" className="w-full sm:w-auto" />
             <WhatsAppButton
               variant="outline"
               message="Hi, I need help choosing the right water purifier."
+              className="w-full sm:w-auto"
             />
           </div>
         </div>
@@ -77,6 +88,7 @@ function HelpChoosing() {
     </Section>
   );
 }
+
 
 export default function HomePage() {
   return (

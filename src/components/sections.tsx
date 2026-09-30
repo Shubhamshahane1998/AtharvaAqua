@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { CheckIcon, assuranceIcons } from "./icons";
 import { ProductCarousel } from "./product-carousel";
 import { CallButton, Section, SectionHeading, TickList } from "./ui";
@@ -50,9 +49,7 @@ export function ServicesGrid({ heading = true, limit }: { heading?: boolean; lim
 
                 <div className="flex flex-1 flex-col items-center p-6 text-center">
                   <h3 className="text-base font-bold text-ink">
-                    <Link href={`/services/${s.slug}`} className="hover:text-brand-600">
-                      {s.title}
-                    </Link>
+                    {s.title}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{s.short}</p>
                   <CallButton variant="outline" className="mt-6 w-full max-w-[220px]" />
@@ -97,14 +94,14 @@ export function WhyUsGrid() {
 
   const Card = ({ item, index }: { item: (typeof whyUs)[number]; index: number }) => {
     return (
-      <div className="rounded-xl border-l-[3px] border-brand-500 bg-white p-4 shadow-[0_2px_12px_rgba(11,43,87,0.06)]">
+      <div className="rounded-xl border-l-[3px] border-brand-500 bg-white p-4 text-center shadow-[0_2px_12px_rgba(11,43,87,0.06)] lg:text-left">
         <Image
           src={asset(whyUsIcons[index % whyUsIcons.length])}
           alt=""
           aria-hidden="true"
           width={56}
           height={56}
-          className="h-14 w-14"
+          className="mx-auto h-14 w-14 lg:mx-0"
         />
         <h3 className="mt-2.5 text-base font-bold leading-snug text-ink">{item.title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>

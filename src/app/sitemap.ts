@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { abs, areas, services } from "@/lib/site";
+import { abs, areas } from "@/lib/site";
 
 // `output: export` requires metadata routes to be explicitly static.
 export const dynamic = "force-static";
@@ -24,12 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency,
       priority,
-    })),
-    ...services.map((s) => ({
-      url: abs(`/services/${s.slug}`),
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
     })),
     ...areas.map((a) => ({
       url: abs(`/ro-service/${a.slug}`),

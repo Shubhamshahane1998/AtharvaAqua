@@ -130,9 +130,7 @@ export default async function AreaPage({ params }: Params) {
           {services.map((s) => (
             <article key={s.slug} className="rounded-2xl border border-slate-200 p-6">
               <h3 className="text-base font-bold text-ink">
-                <Link href={`/services/${s.slug}`} className="hover:text-brand-600">
-                  {s.title} in {area.name}
-                </Link>
+                {s.title} in {area.name}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{s.short}</p>
             </article>

@@ -57,7 +57,7 @@ export function SectionHeading({
  * stylesheet order, not string order, which silently produced white-on-white.
  */
 const buttonBase =
-  "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold shadow-sm transition-colors";
+  "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-[13px] font-semibold shadow-sm transition-colors sm:px-6 sm:text-sm";
 
 const callVariants = {
   primary: "bg-brand-600 text-white hover:bg-brand-700",

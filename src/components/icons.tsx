@@ -207,3 +207,46 @@ export function SettingsIcon(props: IconProps) {
     </svg>
   );
 }
+
+/* --- Solid glyphs for the "Need help choosing" tiles. Outline strokes read
+   too faint at tile size; the design uses filled marks. --- */
+
+export function GearSolidIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props} aria-hidden="true">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M10.3 2.3a1.4 1.4 0 0 1 1.3-.9h.8a1.4 1.4 0 0 1 1.3.9l.4 1a8 8 0 0 1 1.4.6l1-.4a1.4 1.4 0 0 1 1.6.3l.6.6a1.4 1.4 0 0 1 .3 1.6l-.4 1a8 8 0 0 1 .6 1.4l1 .4a1.4 1.4 0 0 1 .9 1.3v.8a1.4 1.4 0 0 1-.9 1.3l-1 .4a8 8 0 0 1-.6 1.4l.4 1a1.4 1.4 0 0 1-.3 1.6l-.6.6a1.4 1.4 0 0 1-1.6.3l-1-.4a8 8 0 0 1-1.4.6l-.4 1a1.4 1.4 0 0 1-1.3.9h-.8a1.4 1.4 0 0 1-1.3-.9l-.4-1a8 8 0 0 1-1.4-.6l-1 .4a1.4 1.4 0 0 1-1.6-.3l-.6-.6a1.4 1.4 0 0 1-.3-1.6l.4-1a8 8 0 0 1-.6-1.4l-1-.4a1.4 1.4 0 0 1-.9-1.3v-.8a1.4 1.4 0 0 1 .9-1.3l1-.4a8 8 0 0 1 .6-1.4l-.4-1a1.4 1.4 0 0 1 .3-1.6l.6-.6a1.4 1.4 0 0 1 1.6-.3l1 .4a8 8 0 0 1 1.4-.6l.4-1ZM12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8Z"
+      />
+    </svg>
+  );
+}
+
+export function WrenchSolidIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props} aria-hidden="true">
+      <path d="M21.3 6.4a.8.8 0 0 0-1.3-.4l-2.4 2.4-2-2 2.4-2.4a.8.8 0 0 0-.4-1.3 6 6 0 0 0-7.2 7.6L3.6 16.9a2.9 2.9 0 0 0 4.1 4.1l6.6-6.7a6 6 0 0 0 7-7.9ZM6.4 19.3a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Z" />
+    </svg>
+  );
+}
+
+export function ShieldSolidIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props} aria-hidden="true">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 1.8 3.8 5.3v6.1c0 5 3.4 9.6 8.2 10.9 4.8-1.3 8.2-5.9 8.2-10.9V5.3L12 1.8Zm4.2 7.6a1 1 0 0 0-1.5-1.3l-3.6 4-1.7-1.7a1 1 0 1 0-1.4 1.4l2.5 2.5a1 1 0 0 0 1.4 0l4.3-4.9Z"
+      />
+    </svg>
+  );
+}
+
+export function HeadsetSolidIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props} aria-hidden="true">
+      <path d="M12 2.2A8.6 8.6 0 0 0 3.4 10.8v1.4a2 2 0 0 0-.9 1.7v3a2 2 0 0 0 2 2h1.3a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-.4v-1.1a6.6 6.6 0 0 1 13.2 0v1.1h-.4a1 1 0 0 0-1 1v5a1 1 0 0 0 .5.9 3.3 3.3 0 0 1-2.4 1.1h-1.2a1.6 1.6 0 0 0-1.5-1.1h-1.3a1.6 1.6 0 1 0 0 3.2h1.3a1.6 1.6 0 0 0 1.5-1.1h1.2a5 5 0 0 0 4.8-3.7 2 2 0 0 0 .4-1.2v-3a2 2 0 0 0-.9-1.7v-1.4A8.6 8.6 0 0 0 12 2.2Z" />
+    </svg>
+  );
+}

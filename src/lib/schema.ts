@@ -72,7 +72,7 @@ export function localBusinessSchema() {
       name: "RO Water Purifier Services",
       itemListElement: services.map((s) => ({
         "@type": "Offer",
-        url: abs(`/services/${s.slug}`),
+        url: abs("/#services"),
         itemOffered: {
           "@type": "Service",
           name: s.title,
@@ -103,7 +103,7 @@ export function serviceSchema(slug: string, areaName?: string) {
     name: areaName ? `${service.title} in ${areaName}` : service.title,
     description: service.short,
     serviceType: service.title,
-    url: abs(`/services/${slug}`),
+    url: abs("/#services"),
     provider: { "@id": businessId },
     areaServed: areaName
       ? { "@type": "City", name: areaName }

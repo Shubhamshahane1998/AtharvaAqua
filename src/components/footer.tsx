@@ -71,7 +71,8 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm text-blue-100/85">
             {services.map((s) => (
               <li key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="hover:text-white">
+                {/* Scrolls to the services section rather than opening a separate page. */}
+                <Link href="/#services" className="hover:text-white">
                   {s.title}
                 </Link>
               </li>
