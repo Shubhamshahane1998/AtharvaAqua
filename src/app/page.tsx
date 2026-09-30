@@ -55,9 +55,9 @@ function HelpChoosing() {
               height={150}
               className="h-[120px] w-[120px] rounded-full bg-brand-50 object-contain sm:h-[150px] sm:w-[150px]"
             />
-            <span aria-hidden="true" className={`${spark} -left-[23px] top-[37%] w-[12px] -rotate-45`} />
-            <span aria-hidden="true" className={`${spark} -left-[28px] top-[51%] w-[10px]`} />
-            <span aria-hidden="true" className={`${spark} -right-[23px] top-[37%] w-[12px] rotate-45`} />
+            <span aria-hidden="true" className={`${spark} -left-[23px] top-[30%] w-[15px] -rotate-130`} />
+            <span aria-hidden="true" className={`${spark} -left-[28px] top-[51%] w-[10px]` } />
+            <span aria-hidden="true" className={`${spark} -right-[23px] top-[30%] w-[15px] rotate-130`} />
             <span aria-hidden="true" className={`${spark} -right-[28px] top-[51%] w-[10px]`} />
           </div>
           <div>

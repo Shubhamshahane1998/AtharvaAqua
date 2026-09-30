@@ -253,24 +253,27 @@ export function HelpHeadsetIcon(props: IconProps) {
   );
 }
 
-/** Outlined WhatsApp bubble, for the white/green-bordered button. */
-export function WhatsAppOutlineIcon(props: IconProps) {
+
+/** Filled handset, as the design's buttons use rather than a stroked outline. */
+export function PhoneSolidIcon(props: IconProps) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.9}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-      aria-hidden="true"
-    >
-      <path d="M12 2.9a9.1 9.1 0 0 0-7.8 13.8L3 21l4.4-1.2A9.1 9.1 0 1 0 12 2.9Z" />
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props} aria-hidden="true">
+      <path d="M6.6 2.6a1.9 1.9 0 0 1 2.7.6l1.6 2.6a1.9 1.9 0 0 1-.4 2.5l-1.3 1a.5.5 0 0 0-.1.6 12.4 12.4 0 0 0 5 5 .5.5 0 0 0 .6-.1l1-1.3a1.9 1.9 0 0 1 2.5-.4l2.6 1.6a1.9 1.9 0 0 1 .6 2.7l-1.1 1.7a3.2 3.2 0 0 1-3.5 1.3C13 20.6 9.4 18.5 6.5 15.6 3.6 12.7 1.5 9.1.8 5.3A3.2 3.2 0 0 1 2 1.8Z" />
+    </svg>
+  );
+}
+
+/**
+ * Solid WhatsApp disc with the handset knocked out, so the button's own
+ * background shows through it — matching the mark on the white button.
+ */
+export function WhatsAppMarkIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props} aria-hidden="true">
       <path
-        fill="currentColor"
-        stroke="none"
-        d="M9.4 7.9c-.2-.5-.4-.5-.6-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.5 4 8.4 8.4 0 0 0 1.5.5 3.6 3.6 0 0 0 1.7.1 2.8 2.8 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3s-1.5-.7-1.7-.8-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.4v-.4c0-.1-.5-1.4-.7-1.9Z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 1.9A10.1 10.1 0 0 0 3.3 17.1L2.1 21.4a.6.6 0 0 0 .7.8l4.4-1.2A10.1 10.1 0 1 0 12 1.9Zm4.9 13.6a2.6 2.6 0 0 1-1.7 1.2 3.4 3.4 0 0 1-1.6-.1 8 8 0 0 1-1.4-.5 11.2 11.2 0 0 1-4.2-3.8 4.9 4.9 0 0 1-1-2.6 2.8 2.8 0 0 1 .8-2.1.9.9 0 0 1 .7-.3h.5c.2 0 .4 0 .5.4s.7 1.7.7 1.8v.4l-.3.4-.4.4c-.1.1-.2.2-.1.5a7 7 0 0 0 1.3 1.6 6.3 6.3 0 0 0 1.9 1.2c.2.1.3 0 .5-.1s.5-.7.7-.9.3-.2.5-.1 1.4.6 1.6.8l.4.2a2 2 0 0 1-.2 1.2Z"
       />
     </svg>
   );

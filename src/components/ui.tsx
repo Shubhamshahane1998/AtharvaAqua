@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PhoneIcon, WhatsAppIcon, WhatsAppOutlineIcon, CheckIcon } from "./icons";
+import { PhoneSolidIcon, WhatsAppIcon, WhatsAppMarkIcon, CheckIcon } from "./icons";
 import { telLink, whatsappLink } from "@/lib/site";
 
 export function Section({
@@ -98,7 +98,7 @@ export function CallButton({
       href={telLink}
       className={`${buttonBase} ${buttonSizes[size]} ${callVariants[variant]} ${className}`}
     >
-      <PhoneIcon className={iconSize[size]} />
+      <PhoneSolidIcon className={iconSize[size]} />
       {label}
     </a>
   );
@@ -107,7 +107,7 @@ export function CallButton({
 const whatsappVariants = {
   primary: "bg-whatsapp text-white shadow-sm hover:brightness-95",
   outline:
-    "border border-slate-200 bg-white text-whatsapp-outline shadow-[0_2px_10px_rgba(11,43,87,0.10)] hover:border-whatsapp-outline hover:bg-green-50",
+    "border border-slate-300 bg-white text-whatsapp-outline shadow-[0_2px_10px_rgba(11,43,87,0.10)] hover:border-whatsapp-outline hover:bg-green-50",
 } as const;
 
 export function WhatsAppButton({
@@ -131,7 +131,7 @@ export function WhatsAppButton({
       className={`${buttonBase} ${buttonSizes[size]} ${whatsappVariants[variant]} ${className}`}
     >
       {variant === "outline" ? (
-        <WhatsAppOutlineIcon className={size === "md" ? "h-[22px] w-[22px]" : "h-[18px] w-[18px]"} />
+        <WhatsAppMarkIcon className={size === "md" ? "h-[22px] w-[22px]" : "h-[18px] w-[18px]"} />
       ) : (
         <WhatsAppIcon className={iconSize[size]} />
       )}
