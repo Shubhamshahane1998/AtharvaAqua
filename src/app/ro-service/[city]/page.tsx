@@ -122,7 +122,7 @@ export default async function AreaPage({ params }: Params) {
         </div>
       </Section>
 
-      <Section className="pt-0">
+      <Section spacing="bottom">
         <h2 className="text-2xl font-extrabold tracking-tight text-ink">
           Our services in {area.name}
         </h2>
@@ -140,7 +140,7 @@ export default async function AreaPage({ params }: Params) {
 
       <FaqList items={localFaqs} />
 
-      <Section className="pt-0">
+      <Section spacing="bottom">
         <h2 className="text-xl font-bold text-ink">Nearby areas we also cover</h2>
         <ul className="mt-4 flex flex-wrap gap-2">
           {nearby.map((a) => (

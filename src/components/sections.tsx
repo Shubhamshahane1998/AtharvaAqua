@@ -151,7 +151,7 @@ export function WhyUsGrid() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-0 rounded-2xl bg-white px-4 py-5 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brand-300">
+      <div className="mt-12 grid gap-0 rounded-2xl border border-slate-300 bg-[#f2f7fe] px-4 py-5 shadow-[0_2px_12px_rgba(11,43,87,0.08)] sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brand-300">
         {assurances.map((a, i) => {
           const Icon = assuranceIcons[i % assuranceIcons.length];
           return (

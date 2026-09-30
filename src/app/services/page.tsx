@@ -21,7 +21,7 @@ export default function ServicesPage() {
     <>
       <JsonLd data={[breadcrumbSchema(trail), faqSchema()]} />
       <Breadcrumbs trail={trail} />
-      <Section className="pb-0">
+      <Section spacing="top">
         <SectionHeading
           as="h1"
           eyebrow="Services"

@@ -59,7 +59,7 @@ export function Hero({
       {/* Desktop only: the pale left-to-right wash from the design. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 hidden bg-linear-to-r from-[#dfe8f7] via-[#dfe8f7]/70 to-transparent md:block"
+        className=" inset-0 -z-10 hidden bg-linear-to-r from-[#dfe8f7] via-[#dfe8f7]/70 to-transparent md:block"
       />
 
       {/* Full height on desktop so the copy sits centred against the frame. */}

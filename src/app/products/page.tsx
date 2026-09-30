@@ -47,7 +47,7 @@ export default function ProductsPage() {
     <>
       <JsonLd data={[breadcrumbSchema(trail), productListSchema()]} />
       <Breadcrumbs trail={trail} />
-      <Section className="pb-0">
+      <Section spacing="top">
         <SectionHeading
           as="h1"
           eyebrow="Products"

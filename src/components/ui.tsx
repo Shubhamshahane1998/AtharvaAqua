@@ -2,17 +2,31 @@ import Link from "next/link";
 import { PhoneSolidIcon, WhatsAppIcon, CheckIcon } from "./icons";
 import { telLink, whatsappLink } from "@/lib/site";
 
+/**
+ * Vertical padding is resolved here rather than overridden from the call site:
+ * a `pt-0` appended to `py-16` is decided by stylesheet order, not string
+ * order, so the override silently did nothing and sections stacked double gaps.
+ */
+const sectionSpacing = {
+  both: "py-16 sm:py-20",
+  top: "pt-16 pb-0 sm:pt-20",
+  bottom: "pt-0 pb-16 sm:pb-20",
+  none: "py-0",
+} as const;
+
 export function Section({
   children,
   className = "",
   id,
+  spacing = "both",
 }: {
   children: React.ReactNode;
   className?: string;
   id?: string;
+  spacing?: keyof typeof sectionSpacing;
 }) {
   return (
-    <section id={id} className={`mx-auto max-w-6xl px-4 py-16 sm:py-20 ${className}`}>
+    <section id={id} className={`mx-auto max-w-6xl px-4 ${sectionSpacing[spacing]} ${className}`}>
       {children}
     </section>
   );

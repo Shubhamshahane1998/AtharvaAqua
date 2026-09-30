@@ -41,7 +41,7 @@ const helpPoints = [
 
 function HelpChoosing() {
   return (
-    <Section className="pt-0">
+    <Section spacing="bottom">
       <div className="grid items-center gap-8 rounded-2xl bg-white px-5 py-8 shadow-[0_2px_18px_rgba(11,43,87,0.09)] sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:gap-10 lg:px-10">
         {/* Mascot sits above the copy on a phone, beside it from `sm` up. */}
         <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:gap-6 sm:text-left lg:min-w-0">
