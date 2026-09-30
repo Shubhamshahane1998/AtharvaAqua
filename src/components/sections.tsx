@@ -311,7 +311,10 @@ export function AboutBlock() {
               ))}
             </ul>
 
-            <CallButton label="Book Your Service Today" variant="light" className="mt-8" />
+            {/* The button is inline-flex, so centring comes from text-align. */}
+            <div className="mt-8 text-center lg:text-left">
+              <CallButton label="Book Your Service Today" variant="light" />
+            </div>
           </div>
         </div>
       </div>

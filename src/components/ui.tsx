@@ -90,7 +90,7 @@ export function CallButton({
 const whatsappVariants = {
   primary: "bg-whatsapp text-white hover:brightness-95",
   outline:
-    "border border-slate-200 bg-white text-whatsapp shadow-none hover:border-whatsapp hover:bg-green-50",
+    "border border-whatsapp bg-white text-whatsapp shadow-none hover:bg-green-50",
 } as const;
 
 export function WhatsAppButton({

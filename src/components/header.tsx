@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { Logo } from "./logo";
 import { PhoneIcon } from "./icons";
@@ -24,13 +23,13 @@ export function Header() {
 
         <nav aria-label="Main" className="hidden flex-1 items-center justify-center gap-8 lg:flex">
           {nav.map((n) => (
-            <Link
+            <a
               key={n.href}
               href={n.href}
               className="text-sm font-medium text-ink transition-colors hover:text-brand-600"
             >
               {n.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -67,13 +66,13 @@ export function Header() {
           <ul className="mx-auto max-w-6xl px-4 py-2">
             {nav.map((n) => (
               <li key={n.href}>
-                <Link
+                <a
                   href={n.href}
                   onClick={() => setOpen(false)}
                   className="block border-b border-slate-100 py-3 text-sm font-medium text-ink last:border-0"
                 >
                   {n.label}
-                </Link>
+                </a>
               </li>
             ))}
             <li className="py-3">

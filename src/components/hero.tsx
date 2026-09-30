@@ -58,7 +58,7 @@ export function Hero({
 
       {/* Desktop only: the pale left-to-right wash from the design. */}
       <div
-        aria-hidden="true"
+        aria-hidden="false"
         className="absolute inset-0 -z-10 hidden bg-linear-to-r from-[#dfe8f7] via-[#dfe8f7]/70 to-transparent md:block"
       />
 

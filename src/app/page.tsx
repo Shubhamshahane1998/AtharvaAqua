@@ -66,12 +66,14 @@ function HelpChoosing() {
             {helpPoints.map(({ label, Icon }) => (
               <li
                 key={label}
-                className="flex items-center gap-3 rounded-xl border border-slate-200 p-3 text-left sm:block sm:border-0 sm:p-0 sm:text-center"
+                className="flex items-center gap-2.5 rounded-xl border border-slate-200 p-2.5 text-left sm:block sm:border-0 sm:p-0 sm:text-center"
               >
-                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-500 sm:mx-auto sm:rounded-full">
+                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-500 sm:h-11 sm:w-11 sm:mx-auto">
                   <Icon className="h-6 w-6" />
                 </span>
-                <p className="text-sm font-normal leading-5 text-slate-800 sm:mt-2">{label}</p>
+                <p className="min-w-0 text-[13px] font-normal leading-tight text-slate-800 sm:mt-2 sm:text-sm sm:leading-5">
+                  {label}
+                </p>
               </li>
             ))}
           </ul>

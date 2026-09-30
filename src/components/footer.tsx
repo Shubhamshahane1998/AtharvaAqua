@@ -71,10 +71,12 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm text-blue-100/85">
             {services.map((s) => (
               <li key={s.slug}>
-                {/* Scrolls to the services section rather than opening a separate page. */}
-                <Link href="/#services" className="hover:text-white">
+                {/* Plain anchor on purpose: next/link intercepts a same-page hash
+                    and skips the scroll, so the section never comes into view. */}
+                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                <a href="/#services" className="hover:text-white">
                   {s.title}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
