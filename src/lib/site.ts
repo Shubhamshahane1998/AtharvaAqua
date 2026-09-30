@@ -27,6 +27,7 @@ export const site = {
  * it through the optimizer, so basePath is never applied — every image would
  * 404 on a project site served from a subdirectory.
  */
+
 export const asset = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 

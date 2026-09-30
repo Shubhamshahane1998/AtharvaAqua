@@ -24,7 +24,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const spark = "absolute block h-1 w-4 rounded-full bg-[#bfdbfe] sm:h-1.5 sm:w-5";
+// Fixed offsets rather than percentages: the pair reads as one mark, and the
+// horizontal sits ~20px below the diagonal and ~6px further out, as in the design.
+const spark = "absolute block h-[3px] rounded-full bg-[#bfdbfe] sm:h-1";
 
 const helpPoints = [
   { label: "Expert Guidance", Icon: HelpGearIcon },
@@ -49,10 +51,10 @@ function HelpChoosing() {
               height={150}
               className="h-[120px] w-[120px] rounded-full bg-brand-50 object-contain sm:h-[150px] sm:w-[150px]"
             />
-            <span aria-hidden="true" className={`${spark} -left-6 top-[24%] -rotate-[42deg]`} />
-            <span aria-hidden="true" className={`${spark} -left-8 top-[46%]`} />
-            <span aria-hidden="true" className={`${spark} -right-6 top-[24%] rotate-[42deg]`} />
-            <span aria-hidden="true" className={`${spark} -right-8 top-[46%]`} />
+            <span aria-hidden="true" className={`${spark} -left-[26px] top-[34%] w-[14px] -rotate-[40deg] sm:-left-8 sm:w-[17px]`} />
+            <span aria-hidden="true" className={`${spark} -left-8 top-[48%] w-[13px] sm:-left-10 sm:w-4`} />
+            <span aria-hidden="true" className={`${spark} -right-[26px] top-[34%] w-[14px] rotate-[40deg] sm:-right-8 sm:w-[17px]`} />
+            <span aria-hidden="true" className={`${spark} -right-8 top-[48%] w-[13px] sm:-right-10 sm:w-4`} />
           </div>
           <div>
             <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-600">
@@ -87,9 +89,10 @@ function HelpChoosing() {
             ))}
           </ul>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
-            <CallButton label="Talk to an Expert" className="w-full sm:w-auto" />
+            <CallButton label="Talk to an Expert" size="md" className="w-full sm:w-auto" />
             <WhatsAppButton
               variant="outline"
+              size="md"
               message="Hi, I need help choosing the right water purifier."
               className="w-full sm:w-auto"
             />

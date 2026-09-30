@@ -57,7 +57,22 @@ export function SectionHeading({
  * stylesheet order, not string order, which silently produced white-on-white.
  */
 const buttonBase =
-  "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-[13px] font-semibold shadow-sm transition-colors sm:px-6 sm:text-sm";
+  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold shadow-sm transition-colors";
+
+/**
+ * Size is resolved here for the same reason as variant: a call-site override of
+ * px/text would be decided by stylesheet order, not string order.
+ *
+ * `sm` keeps the hero CTAs compact enough to share one row at 375px. `md`
+ * matches the design's full-width buttons, whose label measures ~16px against
+ * an ~18px glyph.
+ */
+const buttonSizes = {
+  sm: "gap-2 px-4 py-3 text-[13px] sm:px-6 sm:text-sm",
+  md: "gap-2.5 px-5 py-3 text-[15px] sm:text-base",
+} as const;
+
+const iconSize = { sm: "h-4 w-4", md: "h-[18px] w-[18px]" } as const;
 
 const callVariants = {
   primary: "bg-brand-600 text-white hover:bg-brand-700",
@@ -70,18 +85,20 @@ const callVariants = {
 export function CallButton({
   label = "Call Now",
   variant = "primary",
+  size = "sm",
   className = "",
 }: {
   label?: string;
   variant?: keyof typeof callVariants;
+  size?: keyof typeof buttonSizes;
   className?: string;
 }) {
   return (
     <a
       href={telLink}
-      className={`${buttonBase} ${callVariants[variant]} ${className}`}
+      className={`${buttonBase} ${buttonSizes[size]} ${callVariants[variant]} ${className}`}
     >
-      <PhoneIcon className="h-4 w-4" />
+      <PhoneIcon className={iconSize[size]} />
       {label}
     </a>
   );
@@ -97,11 +114,13 @@ export function WhatsAppButton({
   label = "WhatsApp Now",
   message,
   variant = "primary",
+  size = "sm",
   className = "",
 }: {
   label?: string;
   message?: string;
   variant?: keyof typeof whatsappVariants;
+  size?: keyof typeof buttonSizes;
   className?: string;
 }) {
   return (
@@ -109,12 +128,12 @@ export function WhatsAppButton({
       href={whatsappLink(message)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${buttonBase} ${whatsappVariants[variant]} ${className}`}
+      className={`${buttonBase} ${buttonSizes[size]} ${whatsappVariants[variant]} ${className}`}
     >
       {variant === "outline" ? (
-        <WhatsAppOutlineIcon className="h-[18px] w-[18px]" />
+        <WhatsAppOutlineIcon className={size === "md" ? "h-[22px] w-[22px]" : "h-[18px] w-[18px]"} />
       ) : (
-        <WhatsAppIcon className="h-4 w-4" />
+        <WhatsAppIcon className={iconSize[size]} />
       )}
       {label}
     </a>
