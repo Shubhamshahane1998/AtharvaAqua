@@ -88,7 +88,7 @@ export function Hero({
             )}
           </p>
 
-          <div className="mt-7 flex flex-wrap justify-center gap-3 md:mt-8 md:justify-start md:gap-4">
+          <div className="mt-3 flex flex-wrap justify-center gap-3 md:mt-8 md:justify-start md:gap-4">
             <CallButton label={`Call ${site.phone.replace("+91", "")}`} variant="deep" />
             <WhatsAppButton />
           </div>
