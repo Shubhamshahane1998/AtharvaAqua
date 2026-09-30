@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PhoneSolidIcon, WhatsAppIcon, WhatsAppMarkIcon, CheckIcon } from "./icons";
+import { PhoneSolidIcon, WhatsAppIcon, CheckIcon } from "./icons";
 import { telLink, whatsappLink } from "@/lib/site";
 
 export function Section({
@@ -132,11 +132,7 @@ export function WhatsAppButton({
       rel="noopener noreferrer"
       className={`${buttonBase} ${buttonSizes[size]} ${whatsappVariants[variant]} ${className}`}
     >
-      {variant === "outline" ? (
-        <WhatsAppMarkIcon className={size === "md" ? "h-[22px] w-[22px]" : "h-[18px] w-[18px]"} />
-      ) : (
-        <WhatsAppIcon className={iconSize[size]} />
-      )}
+      <WhatsAppIcon className={size === "md" ? "h-[22px] w-[22px]" : "h-[18px] w-[18px]"} />
       {label}
     </a>
   );

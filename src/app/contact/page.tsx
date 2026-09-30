@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { Breadcrumbs, CallButton, Section, SectionHeading, WhatsAppButton } from "@/components/ui";
-import { ClockIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/icons";
+import { ClockIcon, MailIcon, PhoneSolidIcon, PinIcon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { site, telLink } from "@/lib/site";
@@ -47,7 +47,7 @@ export default function ContactPage() {
               <h2 className="text-lg font-bold text-ink">Contact details</h2>
               <ul className="mt-5 space-y-4 text-sm">
                 <li className="flex items-start gap-3">
-                  <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+                  <PhoneSolidIcon className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
                   <span>
                     <span className="block text-xs font-semibold uppercase tracking-wider text-muted">Phone</span>
                     <a href={telLink} className="font-semibold text-ink hover:text-brand-600">

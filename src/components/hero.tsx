@@ -27,7 +27,7 @@ export function Hero({
   intro?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate min-h-[min(170vw,680px)] overflow-hidden bg-[#e7f0fd] md:aspect-[1280/709] md:min-h-[430px]">
+    <section className="relative isolate min-h-[min(170vw,680px)] overflow-hidden bg-[#e7f0fd] md:aspect-[1280/600] md:min-h-[430px]">
       <picture>
         <source
           media="(min-width: 768px)"

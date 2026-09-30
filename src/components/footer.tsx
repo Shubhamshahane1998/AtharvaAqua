@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./logo";
-import { MailIcon, PhoneIcon, PinIcon } from "./icons";
+import { MailIcon, PhoneSolidIcon, PinIcon } from "./icons";
 import { services, site, telLink } from "@/lib/site";
 
 const socials = [
@@ -85,7 +85,7 @@ export function Footer() {
           <h2 className="text-sm font-bold text-white">Contact Info</h2>
           <ul className="mt-5 space-y-4 text-sm text-blue-100/85">
             <li className="flex items-start gap-2.5">
-              <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0" />
+              <PhoneSolidIcon className="mt-0.5 h-4 w-4 shrink-0" />
               <a href={telLink} className="hover:text-white">{site.phoneDisplay}</a>
             </li>
             <li className="flex items-start gap-2.5">
