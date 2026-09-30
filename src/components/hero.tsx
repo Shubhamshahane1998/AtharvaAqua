@@ -71,10 +71,10 @@ export function Hero({
           </h1>
 
           <p className="mt-4 flex w-full items-center justify-center gap-3 text-sm font-bold text-mint md:mt-5 md:justify-start">
-            <span aria-hidden="true" className="h-px flex-1 max-w-16 bg-mint/45 md:hidden" />
-            <span aria-hidden="true" className="hidden h-px w-10 bg-mint/45 md:block" />
+            {/* One pair, identical classes, so both rules are always the same length. */}
+            <span aria-hidden="true" className="h-px w-14 bg-mint/45 sm:w-16" />
             {suffix}
-            <span aria-hidden="true" className="h-px flex-1 max-w-16 bg-mint/45 md:hidden" />
+            <span aria-hidden="true" className="h-px w-14 bg-mint/45 sm:w-16" />
           </p>
 
           <p className="mt-4 max-w-md text-[15px] leading-relaxed text-slate-700 md:text-base">
