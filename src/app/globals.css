@@ -46,7 +46,7 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: var(--color-surface);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
 }

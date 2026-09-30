@@ -13,8 +13,7 @@ import { asset,
 export function ServicesGrid({ heading = true, limit }: { heading?: boolean; limit?: number }) {
   const list = limit ? services.slice(0, limit) : services;
   return (
-    <div className="bg-surface">
-      <Section id="services">
+    <Section id="services">
         {heading && (
           <SectionHeading
             title="Our"
@@ -59,8 +58,7 @@ export function ServicesGrid({ heading = true, limit }: { heading?: boolean; lim
             );
           })}
         </div>
-      </Section>
-    </div>
+    </Section>
   );
 }
 
@@ -153,7 +151,7 @@ export function WhyUsGrid() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-0 rounded-2xl bg-brand-50/80 px-4 py-5 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brand-300">
+      <div className="mt-12 grid gap-0 rounded-2xl bg-white px-4 py-5 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brand-300">
         {assurances.map((a, i) => {
           const Icon = assuranceIcons[i % assuranceIcons.length];
           return (
@@ -173,8 +171,7 @@ export function WhyUsGrid() {
 
 export function Testimonials() {
   return (
-    <div className="bg-surface">
-      <Section id="testimonials">
+    <Section id="testimonials">
         <SectionHeading title="What Our" accent="Customers Say" />
         <div className="mt-12 grid gap-7 lg:grid-cols-3">
           {testimonials.map((t) => (
@@ -208,8 +205,7 @@ export function Testimonials() {
             </figure>
           ))}
         </div>
-      </Section>
-    </div>
+    </Section>
   );
 }
 
