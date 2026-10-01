@@ -38,7 +38,9 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      # Not `npm run build`: that is the Cloudflare adapter, which expects a
+      # standalone build and fails on the static export this job produces.
+      - run: npm run build:next
 
       # Without this, GitHub Pages runs the output through Jekyll, which skips
       # every directory starting with an underscore — including _next.
