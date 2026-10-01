@@ -56,6 +56,7 @@ export function Hero({
         />
       </picture>
 
+
       {/* Desktop only: the pale left-to-right wash from the design. */}
       <div
         aria-hidden="true"
