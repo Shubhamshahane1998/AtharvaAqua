@@ -46,6 +46,9 @@ export function localBusinessSchema() {
         closes: "21:00",
       },
     ],
+    // Ties this site to the Maps listing, so Google treats them as one entity.
+    sameAs: [site.googleBusinessProfile],
+    hasMap: site.googleBusinessProfile,
     currenciesAccepted: "INR",
     paymentAccepted: "Cash, UPI, Card, Bank Transfer",
     // A service business without premises describes its radius, not a shopfront.

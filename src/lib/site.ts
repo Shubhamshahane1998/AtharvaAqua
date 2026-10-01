@@ -18,6 +18,8 @@ export const site = {
   },
   geo: { lat: 18.5204, lng: 73.8567 },
   hours: "Mo-Su 08:00-21:00",
+  /** Google Business Profile. Linking it from schema ties the site to the Maps listing. */
+  googleBusinessProfile: "https://maps.app.goo.gl/eD2fzUmuATwhNLov8",
 } as const;
 
 /**
