@@ -4,7 +4,7 @@ export const site = {
   tagline: "RO Water Purifier Repair & Service at Your Doorstep",
   description:
     "Expert RO water purifier repair, installation, filter replacement and AMC maintenance in Pune & Pimpri-Chinchwad. Certified technicians, genuine parts, 2-hour response time.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://atharvaaqua.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://atharvaaquasaleservice.in",
   phone: "+918088276882",
   phoneDisplay: "+91 80882 76882",
   whatsapp: "918088276882",
