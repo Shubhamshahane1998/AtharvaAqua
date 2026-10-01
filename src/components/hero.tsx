@@ -18,11 +18,14 @@ import { asset, site } from "@/lib/site";
 export function Hero({
   title = "RO Water Purifier",
   highlight = "Repair & Service",
+  /** Location line inside the h1. The title tag carries the city; the heading should too. */
+  place = "in Pune & Pimpri-Chinchwad",
   suffix = "At Your Doorstep",
   intro,
 }: {
   title?: string;
   highlight?: string;
+  place?: string | null;
   suffix?: string;
   intro?: React.ReactNode;
 }) {
@@ -67,7 +70,12 @@ export function Hero({
         <div className="flex flex-col items-center text-center md:max-w-xl md:items-start md:text-left">
           <h1 className="text-[30px] font-extrabold uppercase leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
             <span className="block text-brand-800">{title}</span>{" "}
-            <span className="block text-sky">{highlight}</span>
+            <span className="block text-sky">{highlight}</span>{" "}
+            {place && (
+              <span className="mt-1 block text-[15px] font-bold normal-case tracking-normal text-brand-800/80 sm:text-lg">
+                {place}
+              </span>
+            )}
           </h1>
 
           <p className="mt-4 flex w-full items-center justify-center gap-3 text-sm font-bold text-mint md:mt-5 md:justify-start">

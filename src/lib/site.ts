@@ -296,8 +296,8 @@ export const faqs = [
     a: "We target a 2-hour response time across Pune and Pimpri-Chinchwad, with same-day doorstep service for most repair requests booked before evening.",
   },
   {
-    q: "Do you service all RO water purifier brands?",
-    a: "Yes. Our technicians service all major RO, UV and UF purifier brands, using genuine spare parts and filters.",
+    q: "Which RO water purifier brands do you repair in Pune?",
+    a: "Yes. Our technicians service every major RO, UV and UF purifier brand — including Kent, Aquaguard, Pureit, Livpure, AO Smith, Blue Star and Havells — using genuine spare parts and filters.",
   },
   {
     q: "How often should RO filters be replaced?",

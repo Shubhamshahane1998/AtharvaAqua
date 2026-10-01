@@ -72,6 +72,8 @@ export default async function AreaPage({ params }: Params) {
       <Hero
         title={`RO Service in ${area.name}`}
         highlight="Repair & Installation"
+        // The city is already in the title above; the default line would repeat it.
+        place={`in ${area.parent}, Maharashtra`}
         suffix="At Your Doorstep"
         intro={`Doorstep RO water purifier repair, installation, filter replacement and AMC across ${area.name}, ${area.parent} — by certified technicians using genuine spare parts.`}
       />

@@ -284,7 +284,8 @@ export function AboutBlock() {
             <p className="mt-4 text-sm leading-relaxed text-slate-200">
               At Atharva Aqua Sales &amp; Services, we provide reliable RO repair, installation,
               filter replacement, AMC maintenance, UV &amp; UF repair, water quality testing, and
-              technical support for all major brands. Our goal is to deliver clean, safe, and
+              technical support for all major brands — Kent, Aquaguard, Pureit, Livpure, AO Smith,
+              Blue Star and Havells among them. Our goal is to deliver clean, safe, and
               healthy drinking water through fast, affordable, and professional service.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-slate-200">
@@ -350,7 +351,8 @@ export function AboutDetail() {
           <p className="mt-5 text-sm leading-relaxed text-muted">
             At Atharva Aqua Sales &amp; Services, we provide reliable RO repair, installation,
             filter replacement, AMC maintenance, UV &amp; UF repair, water quality testing, and
-            technical support for all major brands.
+            technical support for all major brands, including Kent, Aquaguard, Pureit and
+            Livpure.
           </p>
           <div className="mt-6">
             <TickList
