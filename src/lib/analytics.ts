@@ -10,7 +10,8 @@
  *   NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL the label from the WhatsApp conversion
  *   NEXT_PUBLIC_GA_ID                     G-XXXXXXXXXX, optional
  */
-export const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? "";
+/** The account tag. Not a secret — it is visible in the page source either way. */
+export const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? "AW-18486860456";
 export const gaId = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
 const callLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CALL_LABEL ?? "";
