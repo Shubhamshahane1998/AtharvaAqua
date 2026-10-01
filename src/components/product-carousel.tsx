@@ -138,9 +138,10 @@ export function ProductCarousel() {
                 aria-current={i === page}
                 className="group grid h-11 w-8 place-items-center"
               >
+                {/* Every dot is a circle; only the colour marks the active page. */}
                 <span
-                  className={`block h-2 rounded-full transition-all ${
-                    i === page ? "w-6 bg-brand-600" : "w-2 bg-brand-200 group-hover:bg-brand-300"
+                  className={`block h-2 w-2 rounded-full transition-colors ${
+                    i === page ? "bg-brand-600" : "bg-brand-200 group-hover:bg-brand-300"
                   }`}
                 />
               </button>

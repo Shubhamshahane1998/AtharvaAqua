@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Logo } from "./logo";
 import { PhoneSolidIcon } from "./icons";
-import { site, telLink } from "@/lib/site";
+import { telLink } from "@/lib/site";
 
 const nav = [
   { href: "/#home", label: "Home" },
@@ -76,9 +76,14 @@ export function Header() {
               </li>
             ))}
             <li className="py-3">
-              <a href={telLink} className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600">
+              {/* Same CTA as the desktop header rather than a bare number. */}
+              <a
+                href={telLink}
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center gap-2 rounded-lg bg-brand-800 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(0,56,173,0.25)]"
+              >
                 <PhoneSolidIcon className="h-4 w-4" />
-                {site.phoneDisplay}
+                Call Now
               </a>
             </li>
           </ul>
