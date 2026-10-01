@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Must match the Worker in Cloudflare. Without this file CI generated one on
+  // the fly and took the self-reference name from package.json ("website"),
+  // which is not a Worker that exists — deploys failed with code 10143.
+  "name": "atharvaquaa",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-09-30",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "atharvaquaa"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
