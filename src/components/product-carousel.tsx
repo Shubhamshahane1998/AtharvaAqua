@@ -128,7 +128,7 @@ export function ProductCarousel() {
             <ArrowIcon className="h-4 w-4" />
           </button>
 
-          <div className="mt-8 flex justify-center gap-2">
+          <div className="mt-8 flex justify-center gap-0">
             {Array.from({ length: pageCount }).map((_, i) => (
               <button
                 key={i}
@@ -136,7 +136,7 @@ export function ProductCarousel() {
                 onClick={() => goTo(i)}
                 aria-label={`Go to product page ${i + 1}`}
                 aria-current={i === page}
-                className="group grid h-11 w-8 place-items-center"
+                className="group grid h-11 w-5 place-items-center"
               >
                 {/* Every dot is a circle; only the colour marks the active page. */}
                 <span
