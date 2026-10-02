@@ -44,21 +44,38 @@ export function Footer() {
             Delivering fresh, pure, and mineral-balanced water right to your doorstep ensuring your family&apos;s health every day.
           </p>
           <ul className="mt-6 flex gap-3">
-            {socials.filter((s) => s.href).map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/12 text-white transition-colors hover:bg-white/25"
-                >
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
-                    <path d={s.path} />
-                  </svg>
-                </a>
-              </li>
-            ))}
+            {socials.map((s) => {
+              const icon = (
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                  <path d={s.path} />
+                </svg>
+              );
+              const shape =
+                "inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/12 text-white";
+              return (
+                <li key={s.label}>
+                  {s.href ? (
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={s.label}
+                      className={`${shape} transition-colors hover:bg-white/25`}
+                    >
+                      {icon}
+                    </a>
+                  ) : (
+                    // No account yet, so the mark shows but nothing is clickable:
+                    // a link to facebook.com itself would send a visitor away for
+                    // nothing. Hidden from screen readers, which would otherwise
+                    // announce a brand name that leads nowhere.
+                    <span className={shape} aria-hidden="true">
+                      {icon}
+                    </span>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
 
