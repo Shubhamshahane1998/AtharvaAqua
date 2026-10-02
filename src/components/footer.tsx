@@ -102,11 +102,11 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-2.5">
               <PinIcon className="mt-0.5 h-4 w-4 shrink-0" />
-              {/* Opens the Google Business Profile, so the address gives directions
+              {/* Opens the Google Business Profile, so the address goes somewhere
                   rather than being dead text — and the click is a signal Google
-                  reads as the site and the Maps listing being one business. */}
+                  reads as the site and the listing being one business. */}
               <a
-                href={site.googleBusinessProfile}
+                href={site.googleListing}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white"

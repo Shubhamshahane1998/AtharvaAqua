@@ -20,6 +20,13 @@ export const site = {
   hours: "Mo-Su 08:00-21:00",
   /** Google Business Profile. Linking it from schema ties the site to the Maps listing. */
   googleBusinessProfile: "https://maps.app.goo.gl/eD2fzUmuATwhNLov8",
+  /**
+   * The share link from the Business Profile's own Share button, used for the
+   * footer address. Same listing as above (entity /g/11p1gdgj2r) but it opens
+   * the Google listing panel rather than Maps directions. Schema keeps the
+   * maps.app.goo.gl form, because `hasMap` is defined as a map URL.
+   */
+  googleListing: "https://share.google/g88i74fwoxPyo3ptQ",
 } as const;
 
 /**
