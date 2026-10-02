@@ -3,25 +3,33 @@ import { Logo } from "./logo";
 import { MailIcon, PhoneSolidIcon, PinIcon } from "./icons";
 import { services, site, telLink } from "@/lib/site";
 
+/**
+ * Social profiles. An empty `href` hides that icon.
+ *
+ * The accounts do not exist yet, and an icon linking to facebook.com's homepage
+ * sends a visitor away for nothing. Paste a real profile URL in to bring the
+ * icon back; add it to `sameAs` in schema.ts at the same time so Google ties
+ * the profile to this business.
+ */
 const socials = [
   {
     label: "Facebook",
-    href: "https://facebook.com/",
+    href: "",
     path: "M13.5 21v-7.3h2.5l.4-2.9h-2.9V9c0-.8.2-1.4 1.4-1.4h1.6V5a20 20 0 0 0-2.3-.1c-2.3 0-3.9 1.4-3.9 4v2.2H7.8v2.9h2.5V21h3.2Z",
   },
   {
     label: "X",
-    href: "https://x.com/",
+    href: "",
     path: "M17.2 4h2.7l-5.9 6.8L21 20h-5.4l-4.2-5.5L6.5 20H3.8l6.3-7.2L3.4 4h5.6l3.8 5 4.4-5Zm-1 14.3h1.5L8.9 5.6H7.3l8.9 12.7Z",
   },
   {
     label: "Instagram",
-    href: "https://instagram.com/",
+    href: "",
     path: "M12 7.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2Zm0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm5.8-7.8a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM21 8.8c0-1.5-.4-2.8-1.4-3.8s-2.3-1.4-3.8-1.4H8.2C6.7 3.6 5.4 4 4.4 5S3 7.3 3 8.8v6.4c0 1.5.4 2.8 1.4 3.8s2.3 1.4 3.8 1.4h7.6c1.5 0 2.8-.4 3.8-1.4s1.4-2.3 1.4-3.8V8.8Zm-1.9 7.6c-.3.7-.9 1.3-1.6 1.6-1.1.4-3.8.3-5 .3s-3.9.1-5-.3c-.7-.3-1.3-.9-1.6-1.6-.4-1.1-.3-3.8-.3-5s-.1-3.9.3-5c.3-.7.9-1.3 1.6-1.6 1.1-.4 3.8-.3 5-.3s3.9-.1 5 .3c.7.3 1.3.9 1.6 1.6.4 1.1.3 3.8.3 5s.1 3.9-.3 5Z",
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/",
+    href: "",
     path: "M6.9 20H3.8V9.7h3.1V20ZM5.3 8.3a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6ZM20.2 20h-3.1v-5c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V20H10.4V9.7h3v1.4h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7V20Z",
   },
 ];
@@ -36,7 +44,7 @@ export function Footer() {
             Delivering fresh, pure, and mineral-balanced water right to your doorstep ensuring your family&apos;s health every day.
           </p>
           <ul className="mt-6 flex gap-3">
-            {socials.map((s) => (
+            {socials.filter((s) => s.href).map((s) => (
               <li key={s.label}>
                 <a
                   href={s.href}
@@ -94,7 +102,17 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-2.5">
               <PinIcon className="mt-0.5 h-4 w-4 shrink-0" />
-              <span>Pune, Pimpri-Chinchwad Maharashtra</span>
+              {/* Opens the Google Business Profile, so the address gives directions
+                  rather than being dead text — and the click is a signal Google
+                  reads as the site and the Maps listing being one business. */}
+              <a
+                href={site.googleBusinessProfile}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                Pune, Pimpri-Chinchwad Maharashtra
+              </a>
             </li>
           </ul>
         </div>
