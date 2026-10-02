@@ -44,6 +44,16 @@ export const noIndex = process.env.NEXT_PUBLIC_NOINDEX === "true";
 export const telLink = `tel:${site.phone}`;
 
 /**
+ * The link-preview card, 1200x630.
+ *
+ * The filename carries a version suffix on purpose: WhatsApp, Facebook and
+ * LinkedIn cache a scraped preview per URL for weeks, so editing the image in
+ * place leaves every existing share showing the old one. Bump the number
+ * whenever the artwork changes and the new card is picked up immediately.
+ */
+export const ogImage = "/images/og-cover-2.jpg";
+
+/**
  * Joins a path onto the site URL.
  *
  * `new URL("/services", base)` discards the base's own path, which silently

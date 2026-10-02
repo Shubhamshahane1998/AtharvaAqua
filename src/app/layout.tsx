@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
 import { Analytics } from "@/components/analytics";
 import { localBusinessSchema, websiteSchema } from "@/lib/schema";
-import { noIndex, site } from "@/lib/site";
+import { noIndex, ogImage, site } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,13 +52,15 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.shortName} | RO Water Purifier Repair & Service in Pune`,
     description: site.description,
-    images: [{ url: "/images/og-cover.jpg", width: 1200, height: 630, alt: site.name }],
+    images: [
+      { url: ogImage, width: 1200, height: 630, type: "image/jpeg", alt: `${site.shortName} — ${site.tagline}` },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.shortName} | RO Water Purifier Repair & Service`,
     description: site.description,
-    images: ["/images/og-cover.jpg"],
+    images: [ogImage],
   },
   category: "Home Services",
 };

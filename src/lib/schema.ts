@@ -1,4 +1,4 @@
-import { abs, areas, faqs, services, site } from "./site";
+import { abs, areas, faqs, ogImage, services, site } from "./site";
 
 export const businessId = abs("/#business");
 
@@ -13,7 +13,7 @@ export function localBusinessSchema() {
     description: site.description,
     telephone: site.phone,
     email: site.email,
-    image: abs("/images/og-cover.jpg"),
+    image: abs(ogImage),
     priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",
